@@ -1,16 +1,14 @@
-# Farg‘ona Invest
+# Farg‘ona tumani Invest
 
-Farg‘ona viloyati uchun besh tilli investitsiya portali. Taqdimot nomi: **Farg‘ona tumani hokimligi**. Hududiy qamrov: **Farg‘ona viloyati**. Bu ikki tushuncha ataylab ajratilgan; rasmiy nashrdan oldin tashkilot vakolati va brending tasdiqlanishi kerak.
+Faqat **Farg‘ona tumani** uchun besh tilli investitsiya portali. Tashkilot: **Farg‘ona tumani hokimligi**. Farg‘ona shahri, Qo‘qon, Quvasoy yoki boshqa tumanlar ushbu katalogga kirmaydi.
 
-## Yangilangan zona va auksion katalogi — 2026-10-11
+## Tuzatilgan hududiy qamrov — 2026-10-11
 
-Portalning bosh sahifasi endi zonalar va obyektlar katalogidir. 7 ta karta: Qo‘qon EIZ, uning Quvasoy hududi, Farg‘ona, Furqat, O‘zbekiston, Yozyovon va Qo‘shtepadagi tarixiy KSZ ma’lumotlari. Kichik sanoat zonasi yoki EIZning hududi mustaqil erkin iqtisodiy zona deb ko‘rsatilmaydi.
+E-auksion hududlar lug‘atida Farg‘ona tumani id=88, SOATO=1730233; Farg‘ona shahri alohida id=74. Katalog faqat id=88 so‘rovlari orqali olingan lotlardan tuzilgan. Kichik sanoat zonalari va yoshlar sanoat zonalari — auksion toifalari, mustaqil EIZlar soni yoki hududning to‘liq huquqiy reyestri emas.
 
-E-auksionning ochiq katalogidan Farg‘ona bo‘yicha 14 ta haqiqiy EIZ loti olingan: boshlang‘ich narx, zakalat, manzil, savdo vaqti, rasmiy lot havolasi va illyustratsiya. Har birining `/properties/<lot-id>` sahifasi bor. Narx va e’lonlar 2026-10-11 nusxasi; rasmiy sahifada qayta tekshiriladi. Boshlang‘ich narx ijara to‘lovi yoki yakuniy sotilgan narx sifatida ko‘rsatilmaydi.
+Rasmiy manbadan boshlang‘ich narx, zakalat, manzil, savdo vaqti, havola va suratlar olingan. Ijara muddati, yer maydoni va infratuzilma manbada tasdiqlanmagan holatda ochiq belgilangan. Boshlang‘ich narx ijara haqi emas. Dalillar: `docs/DISTRICT-SOURCES.md`. Oldingi viloyat tadqiqoti faqat tarixiy qayd, joriy katalog manbasi emas.
 
-Hujjatdagi tarixiy maydon joriy bo‘sh yer emas. Uchastka maydoni, ijara muddati, kommunikatsiya quvvati va lot uchun ruxsatlar katalog API javobida yo‘q; tafsilot API himoya talabini qaytargan. Bular “tasdiqlanmagan” holatida saqlanadi. `term_month=60` bo‘lib to‘lash ma’lumoti bo‘lib, ijara muddati deb talqin qilinmagan.
-
-Manbalar va o‘qilgan API dalillari: `docs/RESEARCH-ZONES.md`. Ma’lumotlar: `src/catalog-data.js`; sahifalar va besh til: `src/catalog.jsx`; dizayn: `src/catalog.css`. Barcha mahalliy rasmlar bitta HTML paketiga ham joylanadi. Paketlar qayta tayyorlanishi: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`.
+Tayyorlash: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`.
 
 ## Bitta faylli taqdimot
 
@@ -40,7 +38,7 @@ npm run preview -- --port 4173
 ## Tayyor funksiyalar
 
 - O‘zbek, ingliz, rus, turk va soddalashtirilgan xitoy tillari. Til almashtirish joriy sahifani saqlaydi; hujjat tili va meta tavsif ham yangilanadi.
-- Bosh sahifa, viloyat, iqtisodiy zona katalogi, Qo‘qon zona sahifasi, investor yo‘l xaritasi, materiallar, uchta qo‘llanma, aloqa va maxfiylik sahifalari.
+- Bosh sahifa, tuman, sanoat lotlari katalogi va alohida lot sahifalari, investor yo‘l xaritasi, materiallar, uchta qo‘llanma, aloqa va maxfiylik sahifalari.
 - Portal ichida qidiruv, mobil menyu, ochiladigan savol-javoblar va brauzer tarixi bilan navigatsiya.
 - Har tilda yuklab olinadigan UTF-8 matnli qo‘llanmalar; qo‘llanmalarni chop etish yoki brauzer orqali PDF saqlash.
 - Majburiy maydon va email tekshiruvi bilan loyiha kartasi; brauzerda saqlash, faylga yuklash va o‘chirish.
@@ -70,7 +68,7 @@ Natijalar: `docs/VALIDATION.md`. Taqdimot rasmlari: `artifacts/home-desktop.png`
 - `src/styles.css`: dizayn va moslashuvchan ko‘rinish.
 - `public/valley.svg`: Farg‘ona vodiysidan ilhomlangan mualliflik sxematik tasviri; haqiqiy obyekt fotosurati emas.
 
-Raqamlar, yer mavjudligi, infrastruktura quvvati, soliq imtiyozlari, telefon/email va rasmiy yangiliklar o‘ylab topilmagan. Rasmiy manbalarga avvalgi cheklov olib tashlangan va manbalar tekshirildi. Joriy to‘liq regional reyestr va buyurtmachi tasdig‘i hali olinmagan; manbali vaqtinchalik katalog ulardan ajratilgan.
+Raqamlar, yer mavjudligi, infrastruktura quvvati, soliq imtiyozlari, telefon/email va rasmiy yangiliklar o‘ylab topilmagan. Rasmiy manbalarga avvalgi cheklov olib tashlangan va manbalar tekshirildi. Joriy to‘liq tuman reyestri va buyurtmachi tasdig‘i hali olinmagan; manbali vaqtinchalik katalog ulardan ajratilgan.
 
 ## Loyihaning keyingi bosqichi
 

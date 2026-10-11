@@ -24,9 +24,9 @@ test("offline HTML is an interactive website with working pages and languages", 
   );
   await page.goto("http://127.0.0.1:4173/portable-demo.html");
   await expect(page.locator("h1")).toHaveText(
-    "Har bir hudud. Har bir imkoniyat.",
+    "Farg‘ona tumani. Har bir imkoniyat.",
   );
-  await expect(page.getByTestId("property-card")).toHaveCount(14);
+  await expect(page.getByTestId("property-card")).toHaveCount(66);
   await expect
     .poll(() =>
       page
@@ -42,9 +42,9 @@ test("offline HTML is an interactive website with working pages and languages", 
         ),
     )
     .toBeTruthy();
-  await page.locator('a[href="#/uz/properties/25804161"]').click();
-  await expect(page).toHaveURL(/#\/uz\/properties\/25804161$/);
-  await expect(page.locator("main h1")).toContainText("Chinobod");
+  await page.locator('a[href="#/uz/properties/25940339"]').click();
+  await expect(page).toHaveURL(/#\/uz\/properties\/25940339$/);
+  await expect(page.locator("main h1")).toContainText("Yukori Archa");
   await expect
     .poll(() =>
       page

@@ -1,140 +1,104 @@
-import {test, expect} from '@playwright/test';
+import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {catalogZones, catalogProperties} from '../src/catalog-data.js';
-import {languages} from '../src/i18n.js';
+import {catalogZones,catalogProperties} from '../src/catalog-data.js';
+import {languages,copy} from '../src/i18n.js';
+const representatives=[catalogProperties.reduce((a,b)=>a.start_price>b.start_price?a:b),catalogProperties.reduce((a,b)=>a.start_price<b.start_price?a:b),catalogProperties.find(p=>p.category_id===69)];
+const amountText=async(page,code,values)=>page.evaluate(({code,values})=>values.map(v=>new Intl.NumberFormat({uz:'uz-UZ',en:'en-US',ru:'ru-RU',tr:'tr-TR',zh:'zh-CN'}[code],{maximumFractionDigits:2}).format(v)+' UZS'),{code,values});
 
-for (const {code} of languages) {
-  test(`${code}: zone directory and all separate zone pages work on mobile and desktop`, async ({page}) => {
-    test.setTimeout(60000);
-    const errors=[];
-    page.on('pageerror', error=>errors.push(error.message));
-    for (const width of [1440,390]) {
-      await page.setViewportSize({width,height:900});
-      await page.goto(`/${code}/zones`);
-      await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.length);
-      for (const zone of catalogZones) {
-        const card=page.getByTestId('zone-card').filter({has:page.getByRole('heading',{name:zone.names[code],exact:true})});
-        await expect(card).toBeVisible();
-        await card.locator(`a[href="/${code}/zones/${zone.id}"]`).click();
-        await expect(page).toHaveURL(new RegExp(`/${code}/zones/${zone.id}$`));
-        await expect(page.locator('main h1')).toHaveText(zone.names[code]);
-        await expect(page.getByTestId('data-status').first()).toBeVisible();
-        await expect(page.getByTestId('auction-details')).toBeVisible();
-        await expect(page.locator('html')).toHaveAttribute('lang',code);
-        if(zone.areaHa!==null) {
-          await expect(page.getByText(zone.areaNote[code],{exact:true})).toBeVisible();
-          await expect(page.locator(`main a[href="${zone.sourceUrl}"]`)).toBeVisible();
-        }
-        expect(await page.locator('main').innerText()).not.toMatch(/undefined|NaN/);
-        expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
-        await page.goBack();
-        await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.length);
-      }
-    }
-    expect(errors).toEqual([]);
-  });
-}
-
-test('filters change actual zone results and reset an empty result',async ({page})=>{
-  await page.goto('/en/zones');
-  const filters=page.locator('.catalog-filters select');
-  await expect(filters).toHaveCount(4);
-  const price=filters.nth(3);
-  await price.selectOption('high');
-  await expect(page.getByTestId('property-card')).toHaveCount(catalogProperties.filter(p=>p.start_price>1e9).length);
-  await price.selectOption('middle');
-  await expect(page.getByTestId('property-card')).toHaveCount(catalogProperties.filter(p=>p.start_price>=1e8 && p.start_price<=1e9).length);
-  await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.length);
-  await price.selectOption('unknown');
-  await expect(page.getByTestId('property-card')).toHaveCount(0);
-  await filters.nth(2).selectOption('medium');
-  await expect(page.getByTestId('zone-card')).toHaveCount(0);
-  await page.getByRole('button',{name:'Reset filters',exact:true}).click();
-  await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.length);
-  await expect(page.getByTestId('property-card')).toHaveCount(catalogProperties.length);
-  await expect(price).toHaveValue('all');
-  await filters.nth(2).selectOption('small');
-  await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.filter(z=>z.areaHa!==null && z.areaHa<10).length);
-  await filters.nth(2).selectOption('large');
-  await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.filter(z=>z.areaHa>100).length);
-});
-
-test('unknown auction facts stay unknown and zone and lot records are distinguished',async ({page})=>{
-  for(const zone of catalogZones) {
-    await page.goto(`/en/zones/${zone.id}`);
-    await expect(page.getByText('A zone and its individual lots are different records. Conditions must be verified for each lot.')).toBeVisible();
-    if(zone.initialPrice===null) {
-      const price=page.locator('.catalog-summary .catalog-facts > div').filter({has:page.locator('dt',{hasText:'Starting price'})});
-      await expect(price.locator('dd')).toHaveText('Not yet verified');
-    }
-    const auctions=page.getByTestId('auction-details');
-    if(!zone.properties.length) {
-      await expect(auctions.getByRole('heading',{name:'No verified lots are available yet.'})).toBeVisible();
-      expect(await auctions.innerText()).not.toMatch(/\d[\d\s,.]*\s*(UZS|USD|so.m|сум|\$)/i);
-    }
-    await expect(auctions.locator('a[href="https://e-auksion.uz/"]')).toBeVisible();
+test('all 66 source records belong to Fergana DISTRICT and categories partition without duplicates',()=>{
+  expect(catalogProperties).toHaveLength(66);
+  expect(new Set(catalogProperties.map(p=>p.id)).size).toBe(66);
+  expect(catalogZones.map(z=>z.id)).toEqual(['district-small-industry','district-youth-industry']);
+  expect(catalogZones.map(z=>z.properties.length)).toEqual([32,34]);
+  for(const p of catalogProperties) {
+    expect(p.full_address).toMatch(/Farg[`‘’']?ona tumani/i);
+    expect(p.full_address).not.toMatch(/Farg[`‘’']?ona shahri|Quvasoy|Qo.qon|Dang.ara|Rishton/i);
+    expect([69,72]).toContain(p.category_id);
+    expect(p.sourceUrl).toBe(`https://e-auksion.uz/lot-view?lot_id=${p.id}`);
+    expect(p.start_price).toBeGreaterThan(0);
+    expect(p.zaklad_summa).toBeGreaterThan(0);
+    expect(Math.abs(p.zaklad_summa-p.start_price*p.zaklad_percent/100)).toBeLessThanOrEqual(.011);
+    expect(p.areaHa).toBeNull();
+    expect(catalogZones.find(z=>z.id===p.zoneId).properties).toContain(p.id);
   }
 });
 
-test('language switch retains selected zone and directory meets automated accessibility checks',async ({page})=>{
-  const zone=catalogZones[0];
-  await page.goto(`/uz/zones/${zone.id}`);
-  for(const {code,label} of languages.slice(1)) {
-    await page.locator('.language-button').click();
-    await page.getByRole('button',{name:label,exact:true}).click();
-    await expect(page).toHaveURL(new RegExp(`/${code}/zones/${zone.id}$`));
-    await expect(page.locator('main h1')).toHaveText(zone.names[code]);
-  }
-  for(const route of ['/en/zones',`/en/zones/${zone.id}`]) {
-    await page.goto(route);
-    const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
-    expect(results.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
-  }
-});
-
-for(const {code} of languages) test(`${code}: real auction lots preserve exact source amounts and snapshot status`,async ({page})=>{
+for(const {code} of languages) test(`${code}: district categories, source amounts and separate property details`,async({page})=>{
   test.setTimeout(60000);
-  await page.goto(`/${code}/zones`);
-  await expect(page.getByTestId('property-card')).toHaveCount(catalogProperties.length);
-  for(const lot of catalogProperties) {
-    const card=page.getByTestId('property-card').filter({has:page.locator(`a[href="/${code}/properties/${lot.id}"]`)});
-    await card.locator(`a[href="/${code}/properties/${lot.id}"]`).click();
-    await expect(page).toHaveURL(new RegExp(`/${code}/properties/${lot.id}$`));
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  for(const width of [1440,390]) {
+    await page.setViewportSize({width,height:900});await page.goto(`/${code}/zones`);
+    await expect(page.getByTestId('zone-card')).toHaveCount(2);
+    await expect(page.getByTestId('property-card')).toHaveCount(66);
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+    for(const z of catalogZones) {
+      await page.getByTestId('zone-card').filter({has:page.getByRole('heading',{name:z.names[code],exact:true})}).locator(`a[href="/${code}/zones/${z.id}"]`).click();
+      await expect(page.locator('main h1')).toHaveText(z.names[code]);
+      await expect(page.getByTestId('property-card')).toHaveCount(z.properties.length);
+      await expect(page.getByTestId('data-status').first()).toBeVisible();
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+      await page.goBack();
+    }
+  }
+  await page.setViewportSize({width:390,height:900});
+  for(const lot of representatives) {
+    await page.goto(`/${code}/properties/${lot.id}`);
     await expect(page.locator('main h1')).toHaveText(lot.full_address);
+    await expect(page.locator('html')).toHaveAttribute('lang',code);
     const facts=page.getByTestId('auction-details').locator('dd');
-    const amounts=await page.evaluate(({code,start,deposit})=>{const locale={uz:'uz-UZ',ru:'ru-RU',en:'en-US',tr:'tr-TR',zh:'zh-CN'}[code];return [start,deposit].map(value=>new Intl.NumberFormat(locale,{maximumFractionDigits:2}).format(value)+' UZS')},{code,start:lot.start_price,deposit:lot.zaklad_summa});
-    await expect(facts.nth(0)).toHaveText(amounts[0]);
-    await expect(facts.nth(1)).toHaveText(`${amounts[1]} (${lot.zaklad_percent}%)`);
+    const money=await amountText(page,code,[lot.start_price,lot.zaklad_summa]);
+    await expect(facts.nth(0)).toHaveText(money[0]);
+    await expect(facts.nth(1)).toHaveText(`${money[1]} (${lot.zaklad_percent}%)`);
     await expect(facts.nth(2)).toContainText(lot.auction_date_str);
     expect(await facts.nth(2).innerText()).not.toContain('UTC+5');
     await expect(facts.nth(5)).toHaveText(lot.checkedAt);
     await expect(page.locator('.catalog-disclaimer')).toBeVisible();
     await expect(page.getByTestId('auction-details').locator(`a[href="${lot.sourceUrl}"]`)).toBeVisible();
-    const img=page.locator(`main img[src="/lot-${lot.id}.jpg"]`);
-    await expect(img).toBeVisible();
-    expect(await img.evaluate(el=>el.complete&&el.naturalWidth>0)).toBeTruthy();
-    await page.goBack();
-  }
-});
-
-test('largest lot amounts fit mobile and tablet details in English and Russian',async ({page})=>{
-  for(const code of ['en','ru']) for(const width of [390,1024]) {
-    await page.setViewportSize({width,height:900});
-    await page.goto(`/${code}/properties/26008379`);
-    await expect(page.getByTestId('auction-details')).toBeVisible();
-    await expect(page.getByTestId('auction-details').locator('dd').nth(0)).toBeVisible();
+    const image=page.locator(`main img[src="/lot-${lot.id}.jpg"]`);
+    await expect(image).toBeVisible();expect(await image.evaluate(i=>i.complete&&i.naturalWidth>0)).toBeTruthy();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   }
+  expect(errors).toEqual([]);
 });
 
-test('tablet header menu navigates with the longer catalog label',async ({page})=>{
-  await page.setViewportSize({width:1024,height:900});
-  await page.goto('/ru/');
-  const menu=page.locator('.mobile-toggle');
-  await expect(menu).toBeVisible();
-  await menu.click();
-  await page.locator('.navigation a[href="/ru/zones"]').click();
-  await expect(page).toHaveURL(/\/ru\/zones$/);
-  await expect(page.getByTestId('zone-card')).toHaveCount(catalogZones.length);
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+test('filters select district category and actual lot starting-price ranges',async({page})=>{
+  await page.goto('/en/zones');const f=page.locator('.catalog-filters select');
+  await expect(f).toHaveCount(4);
+  await f.nth(0).selectOption('district-youth-industry');
+  await expect(page.getByTestId('zone-card')).toHaveCount(1);
+  await expect(page.getByTestId('property-card')).toHaveCount(34);
+  await f.nth(0).selectOption('all');
+  for(const [value,predicate] of [['low',p=>p.start_price<1e8],['middle',p=>p.start_price>=1e8&&p.start_price<=1e9],['high',p=>p.start_price>1e9]]) {
+    await f.nth(3).selectOption(value);
+    await expect(page.getByTestId('property-card')).toHaveCount(catalogProperties.filter(predicate).length);
+  }
+  await f.nth(3).selectOption('unknown');await expect(page.getByTestId('property-card')).toHaveCount(0);
+  await f.nth(2).selectOption('small');await expect(page.getByTestId('zone-card')).toHaveCount(0);
+  await page.getByRole('button',{name:'Reset filters',exact:true}).click();
+  await expect(page.getByTestId('zone-card')).toHaveCount(2);await expect(page.getByTestId('property-card')).toHaveCount(66);
+});
+
+test('obsolete province zone and property URLs are unavailable',async({page})=>{
+  for(const route of ['/zones/kokand','/zones/quvasoy','/zones/furqat','/properties/25804161','/properties/26008379']) {
+    await page.goto(`/en${route}`);await expect(page.locator('main h1')).toHaveText(copy.en.notFound);
+    await expect(page.getByTestId('property-card')).toHaveCount(0);
+  }
+});
+
+test('selected district detail survives language switching and tablet menu navigation',async({page})=>{
+  const z=catalogZones[0];await page.goto(`/uz/zones/${z.id}`);
+  for(const {code,label} of languages.slice(1)) {
+    await page.locator('.language-button').click();await page.getByRole('button',{name:label,exact:true}).click();
+    await expect(page).toHaveURL(new RegExp(`/${code}/zones/${z.id}$`));await expect(page.locator('main h1')).toHaveText(z.names[code]);
+  }
+  await page.setViewportSize({width:1024,height:900});await page.goto('/ru/');
+  await page.locator('.mobile-toggle').click();await page.locator('.navigation a[href="/ru/zones"]').click();
+  await expect(page).toHaveURL(/\/ru\/zones$/);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+});
+
+test('district catalog and property pass selected automated accessibility checks',async({page})=>{
+  for(const route of ['/en/zones',`/en/properties/${representatives[0].id}`]) {
+    await page.goto(route);const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+    expect(results.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
+  }
 });

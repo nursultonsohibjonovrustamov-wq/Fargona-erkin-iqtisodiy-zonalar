@@ -1,7 +1,7 @@
 FARG‘ONA INVEST — TAQDIMOT PAKETI
 
 Tashkilot nomi: Farg‘ona tumani hokimligi.
-Hududiy qamrov: Farg‘ona viloyati.
+Hududiy qamrov: faqat Farg‘ona tumani.
 Tillar: o‘zbek, rus, ingliz, turk, soddalashtirilgan xitoy.
 
 ARXIVDAN ISHGA TUSHIRISH
@@ -24,6 +24,5 @@ Sinov uchun sun’iy ma’lumotdan foydalaning va ko‘rsatishdan keyin kartani 
 Rasmiy statistika, aloqa kanallari, to‘liq zona ro‘yxati va tarjimalar
 rasmiy nashrdan oldin tasdiqlanishi kerak.
 
-YANGILANGAN KATALOG (2026-10-11)
-7 ta zona/hudud kartasi va 14 ta E-auksion loti mavjud. Bu 7 ta mustaqil EIZ yoki viloyatning to‘liq rasmiy reyestri degani emas. Narxlar boshlang‘ich auksion narxlari, ijara haqi emas. Ijara muddati va alohida lot maydoni tasdiqlanmagan.
-Fargona-sayt-demo.html faylini arxivdan chiqaring va brauzer bilan oching. Sahifalar, tillar va suratlar shu faylda joylangan. Rasmiy manba havolalari Internet talab qiladi.
+
+TUZATILGAN KATALOG: faqat Farg‘ona tumani. Boshqa tuman va shaharlardagi lotlar olib tashlandi. Ma’lumot manbalari: DISTRICT-SOURCES.md.

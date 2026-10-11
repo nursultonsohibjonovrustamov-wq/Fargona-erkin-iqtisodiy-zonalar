@@ -1,3 +1,15 @@
+# Farg‘ona tumani: yakuniy tekshiruv — 2026-10-11
+
+Joriy tuman versiyasida jami 30 ta noyob test o‘tdi: 6 Node, 13 asosiy brauzer, 10 tuman katalogi va 1 mustaqil HTML testi. Birinchi sinovda yangilangan matnlar qidiruvda umumiy sahifani qo‘llanmadan oldin ko‘rsatgani aniqlandi. Sarlavhaga mos natijalar birinchi chiqadigan qilib tuzatildi; ikkala ta’sirlangan test qayta o‘tdi. Parallel runnerlarning umumiy test-results papkasiga yozishi trace fayli kolliziyasini ham keltirdi; qayta sinovda yo‘q.
+
+66 lotning har biri Farg‘ona tumani manzili bilan tekshirildi, 32 kichik sanoat va 34 yoshlar sanoat toifasiga ajratildi. Beshta tilda tuman/category sahifalari, mobil ko‘rinish, narxlar, zakalat, suratlar, filtrlar, eski boshqa-hudud URLlarining 404 javobi tekshirildi. Mustaqil HTMLdagi barcha66lot suratlari ichiga joylangan holda yuklandi. Production build muvaffaqiyatli.
+
+Quyida saqlangan eski viloyat natijalari joriy saytga tatbiq etilmaydi.
+
+---
+
+> HUDUDIY TUZATISH: avvalgi viloyat qamrovi foydalanuvchi talabiga mos kelmagan. Joriy sayt faqat Farg‘ona tumani uchun. Quyidagi viloyat ma’lumotlari va test sonlari tarixiy; joriy ma’lumotlar DISTRICT-SOURCES.md va CATALOG-QA.md da.
+
 # Katalog yangilanishi — 2026-10-11
 
 Yakuniy natija: 35 ta test muvaffaqiyatli: 6 ta Node testi, 13 ta asosiy brauzer testi, 15 ta katalog testi va 1 ta mustaqil HTML testi. Katalog sinovlari 7 ta zona/hudud sahifasini 5 tilda desktop va mobil ekranlarda, 14 ta lot sahifasini 5 tilda tekshirdi. Eng katta narxli lot va ruscha menyu 390/1024 px ekranlarda ham tekshirildi. Katalog accessibility tekshiruvlarida 0 avtomatik buzilish qayd etildi.

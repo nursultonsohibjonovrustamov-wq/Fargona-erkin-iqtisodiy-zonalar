@@ -231,13 +231,58 @@ const dictionaries = {
     "演示 · 资料正在准备官方确认",
   ],
 };
-const regionNames = {
-  uz: "Quvasoy",
-  ru: "Кувасай",
-  en: "Quvasoy",
-  tr: "Quvasoy",
-  zh: "库瓦赛",
+
+const districtOverrides = {
+  uz: [
+    "Farg‘ona tumani iqtisodiy obyektlari",
+    "Farg‘ona tumani. Har bir imkoniyat.",
+    "Faqat Farg‘ona tumani. Farg‘ona shahri va boshqa tumanlar kiritilmagan.",
+    "Lot toifasi",
+    "Farg‘ona tumani",
+    "Katalog guruhlari rasmiy zona nomlari emas: kichik sanoat va yoshlar sanoat lotlari alohida toifalarda berilgan.",
+    "Lotlar E-auksion toifalari bo‘yicha guruhlangan. Bu guruhlar alohida rasmiy iqtisodiy zonalar deb ko‘rsatilmaydi.",
+  ],
+  ru: [
+    "Экономические объекты Ферганского района",
+    "Ферганский район. Каждая возможность.",
+    "Только Ферганский район. Город Фергана и другие районы исключены.",
+    "Категория лота",
+    "Ферганский район",
+    "Группы каталога не являются официальными названиями зон: малая и молодёжная промышленность показаны отдельно.",
+    "Лоты сгруппированы по категориям E-auksion. Группы не являются отдельными официальными экономическими зонами.",
+  ],
+  en: [
+    "Fergana District economic properties",
+    "Fergana District. Every opportunity.",
+    "Fergana District only. Fergana City and other districts are excluded.",
+    "Lot category",
+    "Fergana District",
+    "Directory groups are not official zone names: small industrial and youth industrial lots are separate categories.",
+    "Lots are grouped by E-auksion categories. These groups are not separate official economic zones.",
+  ],
+  tr: [
+    "Fergana ilçesi ekonomik mülkleri",
+    "Fergana ilçesi. Her fırsat.",
+    "Yalnızca Fergana ilçesi. Fergana şehri ve diğer ilçeler hariçtir.",
+    "Lot kategorisi",
+    "Fergana ilçesi",
+    "Katalog grupları resmî bölge adları değildir: küçük ve gençlik sanayi lotları ayrı kategorilerdir.",
+    "Lotlar E-auksion kategorilerine göre gruplandırılır; gruplar ayrı resmî ekonomik bölgeler değildir.",
+  ],
+  zh: [
+    "费尔干纳区经济物业",
+    "费尔干纳区，每个机会。",
+    "仅费尔干纳区，不包括费尔干纳市及其他区。",
+    "标的类别",
+    "费尔干纳区",
+    "目录分组不是官方经济区名称：小型工业与青年工业标的分别展示。",
+    "标的按E-auksion类别分组，并非独立官方经济区。",
+  ],
 };
+for (const [lang, v] of Object.entries(districtOverrides)) {
+  [0, 1, 2, 3, 5, 36, 28].forEach((key, i) => (dictionaries[lang][key] = v[i]));
+}
+
 export const catalogHeading = (lang) =>
   (dictionaries[lang] || dictionaries.uz)[0];
 const proposals = {
@@ -247,27 +292,13 @@ const proposals = {
   tr: "Tartışma önerisi: küçük üretim, ambalaj veya depolama projelerini incelemek. Uygunluk; enerji kapasitesi, bina durumu, lojistik ve izinli faaliyetler doğrulandıktan sonra değerlendirilir. Onaylanmış plan değildir.",
   zh: "讨论建议：研究小型制造、包装或仓储项目。适用性须核实电力容量、建筑状况、物流和允许的活动后评估。这不是获批规划。",
 };
-const photoCaptions = {
-  uz: "Qo‘qon EIZdagi korxonaga tashrif, 14.09.2019. Tarixiy surat; joriy bo‘sh obyekt yoki uning hozirgi holatini ko‘rsatmaydi. Manba: O‘zbekiston Respublikasi Prezidentining rasmiy sayti.",
-  ru: "Посещение предприятия СЭЗ «Коканд», 14.09.2019. Историческая фотография; не показывает свободный объект или его текущее состояние. Источник: официальный сайт Президента Республики Узбекистан.",
-  en: "Visit to an enterprise in Kokand FEZ, 14 September 2019. Historical photograph; not an available property or evidence of its current condition. Source: official website of the President of Uzbekistan.",
-  tr: "Kokand SEB içindeki bir işletmeye ziyaret, 14 Eylül 2019. Tarihî fotoğraf; mevcut boş mülkü veya bugünkü durumunu göstermez. Kaynak: Özbekistan Cumhurbaşkanlığının resmî sitesi.",
-  zh: "2019年9月14日参观浩罕自由经济区内企业。历史照片，不代表当前可用物业或现状。来源：乌兹别克斯坦总统官方网站。",
-};
 const words = (lang) => dictionaries[lang] || dictionaries.uz;
 function Facts({ zone, c, lang }) {
   return (
     <dl className="catalog-facts">
       {[
         [13, zone.areaHa === null ? null : `${zone.areaHa} ha`],
-        [
-          39,
-          zone.region === "quvasoy"
-            ? regionNames[lang]
-            : zone.region === "kokand"
-              ? c[5]
-              : zone.names[lang],
-        ],
+        [39, c[5]],
         [19, zone.initialPrice],
         [24, zone.verifiedAt],
       ].map(([label, value]) => (
@@ -328,8 +359,6 @@ export function Catalog({ lang, Link, ButtonLink }) {
                 <option value="all">{c[4]}</option>
                 {label === 3 ? (
                   <>
-                    <option value="kokand">{c[5]}</option>
-                    <option value="quvasoy">{regionNames[lang]}</option>
                     {catalogZones
                       .filter((z) => z.type)
                       .map((z) => (
@@ -383,11 +412,7 @@ export function Catalog({ lang, Link, ButtonLink }) {
               <div className="catalog-card-body">
                 <p className="eyebrow">
                   <MapPin size={15} />
-                  {zone.region === "quvasoy"
-                    ? regionNames[lang]
-                    : zone.region === "kokand"
-                      ? c[5]
-                      : zone.names[lang]}
+                  {c[5]}
                 </p>
                 <h2>{zone.names[lang] || zone.names.uz}</h2>
                 <Facts zone={zone} c={c} lang={lang} />
@@ -438,7 +463,12 @@ export function Catalog({ lang, Link, ButtonLink }) {
     </>
   );
 }
-export function CatalogDetail({ lang, Link, ButtonLink, id = "kokand" }) {
+export function CatalogDetail({
+  lang,
+  Link,
+  ButtonLink,
+  id = "district-unused",
+}) {
   const c = words(lang);
   const zone = catalogZones.find((z) => z.id === id);
   if (!zone)
@@ -464,35 +494,24 @@ export function CatalogDetail({ lang, Link, ButtonLink, id = "kokand" }) {
       </section>
       <section className="container catalog-section">
         <div className="catalog-detail-top">
-          {id === "kokand" ? (
-            <figure className="catalog-historical-photo">
-              <img
-                src="/kokand-2019.jpg"
-                alt={photoCaptions[lang] || photoCaptions.uz}
-              />
-              <figcaption>
-                {photoCaptions[lang] || photoCaptions.uz}{" "}
-                <a
-                  href="https://president.uz/oz/lists/view/2860"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  President.uz ↗
-                </a>
-              </figcaption>
-            </figure>
-          ) : (
-            <div className="catalog-photo-placeholder">
-              <Building2 size={72} strokeWidth={1} />
-              <h2>{c[25]}</h2>
-              <p>{c[26]}</p>
-            </div>
-          )}
+          <div className="catalog-photo-placeholder">
+            <Building2 size={72} strokeWidth={1} />
+            <h2>{c[25]}</h2>
+            <p>{c[26]}</p>
+          </div>
+
           <div className="catalog-summary">
             <h2>{c[39]}</h2>
             <Facts zone={zone} c={c} lang={lang} />
             {zone.areaNote && (
               <p className="catalog-note">{zone.areaNote[lang]}</p>
+            )}
+            {zone.legalSourceUrl && (
+              <p>
+                <a href={zone.legalSourceUrl} target="_blank" rel="noreferrer">
+                  Lex.uz · PQ-454 ↗
+                </a>
+              </p>
             )}
             <p>
               <strong>{c[23]}: </strong>

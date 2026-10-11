@@ -6,7 +6,7 @@ const routes = [
   "/",
   "/region",
   "/zones",
-  "/zones/kokand",
+  "/zones/district-youth-industry",
   "/investor",
   "/resources",
   ...articleSlugs.map((x) => "/resources/" + x),
@@ -135,7 +135,7 @@ test("key pages meet automated WCAG AA checks", async ({ page }) => {
     "/en/contact",
     "/ru/investor",
     "/zh/resources",
-    "/tr/zones/kokand",
+    "/tr/zones/district-youth-industry",
   ]) {
     await page.goto(route);
     const results = await new AxeBuilder({ page })

@@ -9,10 +9,10 @@ export const copy = {
   uz: {
     brand: "Farg‘ona Invest",
     authority: "Farg‘ona tumani hokimligi",
-    territory: "FARG‘ONA VILOYATI · O‘ZBEKISTON",
+    territory: "FARG‘ONA TUMANI · O‘ZBEKISTON",
     nav: [
       "Bosh sahifa",
-      "Viloyat haqida",
+      "Tuman haqida",
       "Zonalar va obyektlar",
       "Investor uchun",
       "Materiallar",
@@ -22,9 +22,9 @@ export const copy = {
     explore: "Imkoniyatlarni o‘rganish",
     guideCta: "Investor yo‘l xaritasi",
     heroEyebrow: "G‘oyadan imkoniyatga",
-    heroTitle: "Biznesingizning\nkeyingi manzili —\nFarg‘ona.",
+    heroTitle: "Farg‘ona tumani",
     heroText:
-      "Ishlab chiqarish, hamkorlik va yangi bozorlar. Farg‘ona viloyatining investitsiya imkoniyatlarini bir joyda o‘rganing.",
+      "Farg‘ona tumanidagi obyektlar bo‘yicha rasmiy ma’lumotlar tasdiqlanishi kutilmoqda. Maydon, foydalanish huquqi, infratuzilma va narxlar har bir obyekt uchun alohida tekshiriladi.",
     heroCaption: "Farg‘ona vodiysidan ilhomlangan tasvir",
     scroll: "Imkoniyatlar bilan tanishing",
     pillars: [
@@ -37,10 +37,10 @@ export const copy = {
       "Yangi ishlab chiqarish loyihalari uchun",
       "G‘oyadan murojaatgacha aniq qadamlar",
     ],
-    aboutEyebrow: "Nega Farg‘ona?",
-    aboutTitle: "An’analar boy.\nImkoniyatlar keng.",
+    aboutEyebrow: "Farg‘ona tumani",
+    aboutTitle: "Farg‘ona tumani obyektlari",
     aboutText:
-      "Farg‘ona — hunarmandchilik, tadbirkorlik va sanoat an’analari uyg‘unlashgan viloyat. Loyihangizni joylashtirishda yo‘nalish, infratuzilma va logistika talablarini birgalikda baholang.",
+      "Farg‘ona tumani loyihasi uchun bozor, infratuzilma va logistika talablari aniq obyekt bo‘yicha baholanadi. Tasdiqlanmagan statistik raqamlar kiritilmaydi.",
     aboutPoints: [
       "Ishlab chiqarish va tadbirkorlik muhiti",
       "Mintaqaviy savdo va hamkorlik",
@@ -51,17 +51,17 @@ export const copy = {
     zoneEyebrow: "Investitsiya geografiyasi",
     zoneTitle: "Loyihangiz uchun\nmos manzil.",
     zoneIntro:
-      "Qo‘qon erkin iqtisodiy zonasi bilan tanishing. Muayyan loyiha uchun joy, quvvat va rezidentlik shartlari vakolatli tashkilot bilan tekshiriladi.",
-    kokand: "Qo‘qon",
+      "Farg‘ona tumanidagi obyektlar bo‘yicha rasmiy ma’lumotlar tasdiqlanishi kutilmoqda. Maydon, foydalanish huquqi, infratuzilma va narxlar har bir obyekt uchun alohida tekshiriladi.",
+    kokand: "Farg‘ona tumani",
     fez: "Erkin iqtisodiy zona",
     zoneDescription:
       "Ishlab chiqarish loyihalari va sanoat hamkorligi uchun iqtisodiy zona.",
-    zoneLocation: "Qo‘qon shahri, Farg‘ona viloyati",
+    zoneLocation: "Farg‘ona tumani",
     zoneCardAction: "Zonani o‘rganish",
     mapNote:
       "Joylashuv sxemasi. Kadastr chegaralari yoki bo‘sh yerlar xaritasi emas.",
-    mapLabel: "Farg‘ona viloyati joylashuv sxemasi",
-    fergana: "Farg‘ona",
+    mapLabel: "Farg‘ona tumani",
+    fergana: "Farg‘ona tumani",
     margilan: "Marg‘ilon",
     tashkent: "Toshkent",
     sectorEyebrow: "Loyiha yo‘nalishlari",
@@ -113,11 +113,11 @@ export const copy = {
     ],
     articleTag: "Amaliy qo‘llanma",
     articleRead: "O‘qish",
-    bottomTitle: "Farg‘onada yangi\nloyihani boshlaymizmi?",
+    bottomTitle: "Farg‘ona tumani",
     bottomText:
       "G‘oyangizni tartibga soling. Keyingi suhbat uchun loyiha ma’lumotlarini tayyorlang.",
     footerText:
-      "Farg‘ona viloyati investitsiya imkoniyatlari va investorlar uchun axborot portali.",
+      "Farg‘ona tumani investitsiya imkoniyatlari va investorlar uchun axborot portali.",
     footerNav: "Portal",
     footerSources: "Rasmiy manbalar",
     ministry: "Investitsiyalar vazirligi",
@@ -138,9 +138,9 @@ export const copy = {
     skip: "Asosiy mazmunga o‘tish",
     back: "Ortga",
     home: "Bosh sahifa",
-    regionTitle: "Farg‘ona.\nHamkorlik uchun ochiq.",
+    regionTitle: "Farg‘ona tumani",
     regionLead:
-      "Loyihaga mos joyni tanlash — bozor, resurs va infratuzilmani birgalikda baholashdan boshlanadi.",
+      "Farg‘ona tumani loyihasi uchun bozor, infratuzilma va logistika talablari aniq obyekt bo‘yicha baholanadi. Tasdiqlanmagan statistik raqamlar kiritilmaydi.",
     regionCards: ["Logistika", "Mahalliy hamkorlik", "Infratuzilma"],
     regionCardTexts: [
       "Yetkazib berish yo‘nalishlari, bojxona va transport xarajatlarini loyiha kesimida hisoblang.",
@@ -148,13 +148,13 @@ export const copy = {
       "Elektr, gaz, suv va transportga ulanish shartlarini aniq manzil bo‘yicha tasdiqlang.",
     ],
     regionNote:
-      "Investitsiya qarori uchun statistik raqamlar va aniq quvvatlar rasmiy manbalar asosida alohida tasdiqlanishi kerak.",
-    zonesPageTitle: "Qo‘qon erkin\niqtisodiy zonasi",
+      "Farg‘ona tumanidagi obyektlar bo‘yicha rasmiy ma’lumotlar tasdiqlanishi kutilmoqda. Maydon, foydalanish huquqi, infratuzilma va narxlar har bir obyekt uchun alohida tekshiriladi.",
+    zonesPageTitle: "Farg‘ona tumani obyektlari",
     zoneDetailLead:
-      "Farg‘ona viloyatida ishlab chiqarish loyihasini joylashtirish imkoniyatlarini o‘rganing.",
+      "Farg‘ona tumanidagi obyektlar bo‘yicha rasmiy ma’lumotlar tasdiqlanishi kutilmoqda. Maydon, foydalanish huquqi, infratuzilma va narxlar har bir obyekt uchun alohida tekshiriladi.",
     overview: "Umumiy ma’lumot",
     zoneDetailText:
-      "Qo‘qon erkin iqtisodiy zonasi bo‘yicha loyiha muhokamasida faoliyat yo‘nalishi, joylashtirish talablari va rezidentlik tartibi aniqlashtiriladi. Ushbu portal yer ajratish, rezidentlik yoki imtiyoz berish haqida qaror chiqarmaydi.",
+      "Farg‘ona tumanidagi obyektlar bo‘yicha rasmiy ma’lumotlar tasdiqlanishi kutilmoqda. Maydon, foydalanish huquqi, infratuzilma va narxlar har bir obyekt uchun alohida tekshiriladi.",
     verifyTitle: "Qarordan oldin tekshiring",
     verification: [
       "Rezidentlikka qabul qilish mezonlari",
@@ -185,7 +185,7 @@ export const copy = {
     ],
     sourceStatus: "Manbalar va tekshiruv holati",
     sourceText:
-      "Rasmiy manbalar internet orqali tekshirildi. Zona ma’lumotlarida hujjat sanasi va tekshiruv sanasi alohida ko‘rsatiladi. Joriy bo‘sh yer, ijara va auksion shartlari har bir obyekt uchun tasdiqlanishi kerak.",
+      "Farg‘ona tumani obyektlari bo‘yicha ma’lumotlar rasmiy tasdiqlashga tayyorlanmoqda. Manbasi, sanasi va shartlari tasdiqlanmagan ma’lumotlar haqiqiy taklif sifatida ko‘rsatilmaydi.",
     sourceLink: "Rasmiy saytga o‘tish",
     sourceExternal: "Tashqi manba",
     download: "Yuklab olish",
@@ -195,7 +195,7 @@ export const copy = {
       "Loyiha ma’lumotlarini tayyorlang. Taqdimot formasida ma’lumotlar tashkilotga yuborilmaydi.",
     contactOwner: "Portal nomi",
     contactScope: "Hududiy qamrov",
-    scopeValue: "Farg‘ona viloyati",
+    scopeValue: "Farg‘ona tumani",
     channelTitle: "Rasmiy aloqa",
     channelText:
       "Telefon, email va qabul manzili mas’ul tashkilot tomonidan tasdiqlangach e’lon qilinadi.",
@@ -259,10 +259,10 @@ export const copy = {
   en: {
     brand: "Fergana Invest",
     authority: "Fergana District Administration",
-    territory: "FERGANA REGION · UZBEKISTAN",
+    territory: "FERGANA DISTRICT · UZBEKISTAN",
     nav: [
       "Home",
-      "The region",
+      "The district",
       "Zones & properties",
       "For investors",
       "Resources",
@@ -272,9 +272,9 @@ export const copy = {
     explore: "Explore opportunities",
     guideCta: "Investor roadmap",
     heroEyebrow: "From ambition to opportunity",
-    heroTitle: "Your next\nbusiness destination.\nFergana.",
+    heroTitle: "Fergana District",
     heroText:
-      "Manufacturing, partnerships and new markets. Discover the investment opportunities of Fergana Region in one place.",
+      "Official information about properties in Fergana District is awaiting confirmation. Area, legal rights, infrastructure and prices must be checked for each individual property.",
     heroCaption: "An illustration inspired by the Fergana Valley",
     scroll: "Discover the possibilities",
     pillars: [
@@ -287,10 +287,10 @@ export const copy = {
       "For new manufacturing projects",
       "Practical steps from idea to enquiry",
     ],
-    aboutEyebrow: "Why Fergana?",
-    aboutTitle: "Rich in tradition.\nOpen to opportunity.",
+    aboutEyebrow: "Fergana District",
+    aboutTitle: "Fergana District properties",
     aboutText:
-      "Fergana brings together traditions of craftsmanship, enterprise and industry. Assess your sector, infrastructure and logistics needs together when choosing a project location.",
+      "For a project in Fergana District, market, infrastructure and logistics needs are assessed for the individual property. Unconfirmed statistics are not presented.",
     aboutPoints: [
       "A manufacturing and entrepreneurial environment",
       "Regional trade and partnerships",
@@ -301,17 +301,17 @@ export const copy = {
     zoneEyebrow: "Investment geography",
     zoneTitle: "Find a place\nfor your ambition.",
     zoneIntro:
-      "Explore the Kokand Free Economic Zone. Site availability, capacity and residency conditions must be verified with the responsible organisation for each project.",
-    kokand: "Kokand",
+      "Official information about properties in Fergana District is awaiting confirmation. Area, legal rights, infrastructure and prices must be checked for each individual property.",
+    kokand: "Fergana District",
     fez: "Free Economic Zone",
     zoneDescription:
       "An economic zone for manufacturing projects and industrial partnerships.",
-    zoneLocation: "Kokand, Fergana Region",
+    zoneLocation: "Fergana District",
     zoneCardAction: "Explore the zone",
     mapNote:
       "Schematic location map. Not a cadastral boundary or available-land map.",
-    mapLabel: "Schematic map of Fergana Region",
-    fergana: "Fergana",
+    mapLabel: "Fergana District",
+    fergana: "Fergana District",
     margilan: "Margilan",
     tashkent: "Tashkent",
     sectorEyebrow: "Project directions",
@@ -363,11 +363,11 @@ export const copy = {
     ],
     articleTag: "Practical guide",
     articleRead: "Read guide",
-    bottomTitle: "Ready to start\nsomething in Fergana?",
+    bottomTitle: "Fergana District",
     bottomText:
       "Turn your idea into a clear project brief. Prepare for your next conversation.",
     footerText:
-      "An information portal for investment opportunities in Fergana Region and investor preparation.",
+      "An information portal for investment opportunities in Fergana District and investor preparation.",
     footerNav: "The portal",
     footerSources: "Official sources",
     ministry: "Ministry of Investment",
@@ -388,9 +388,9 @@ export const copy = {
     skip: "Skip to main content",
     back: "Back",
     home: "Home",
-    regionTitle: "Fergana.\nOpen to partnership.",
+    regionTitle: "Fergana District",
     regionLead:
-      "Choosing a project location begins with assessing markets, resources and infrastructure together.",
+      "For a project in Fergana District, market, infrastructure and logistics needs are assessed for the individual property. Unconfirmed statistics are not presented.",
     regionCards: ["Logistics", "Local partnerships", "Infrastructure"],
     regionCardTexts: [
       "Calculate delivery routes, customs requirements and transport costs for your project.",
@@ -398,13 +398,13 @@ export const copy = {
       "Confirm electricity, gas, water and transport connections for the specific site.",
     ],
     regionNote:
-      "Statistics and specific capacity figures for an investment decision need separate verification against official sources.",
-    zonesPageTitle: "Kokand Free\nEconomic Zone",
+      "Official information about properties in Fergana District is awaiting confirmation. Area, legal rights, infrastructure and prices must be checked for each individual property.",
+    zonesPageTitle: "Fergana District properties",
     zoneDetailLead:
-      "Explore the possibilities of locating a manufacturing project in Fergana Region.",
+      "Official information about properties in Fergana District is awaiting confirmation. Area, legal rights, infrastructure and prices must be checked for each individual property.",
     overview: "Overview",
     zoneDetailText:
-      "A project discussion for the Kokand Free Economic Zone should clarify the proposed activity, site requirements and residency procedure. This portal does not grant land, residency or incentives.",
+      "Official information about properties in Fergana District is awaiting confirmation. Area, legal rights, infrastructure and prices must be checked for each individual property.",
     verifyTitle: "Verify before deciding",
     verification: [
       "Criteria for admission as a resident",
@@ -435,7 +435,7 @@ export const copy = {
     ],
     sourceStatus: "Sources and verification status",
     sourceText:
-      "Official sources were reviewed online. Zone records distinguish the source publication date from the verification date. Current land availability, lease terms and auction conditions require property-specific confirmation.",
+      "Information about Fergana District properties is being prepared for official confirmation. Information with unconfirmed sources, dates or terms is not presented as an actual offer.",
     sourceLink: "Visit official website",
     sourceExternal: "External source",
     download: "Download",
@@ -445,7 +445,7 @@ export const copy = {
       "Prepare your project information. The presentation form does not send it to an organisation.",
     contactOwner: "Portal identity",
     contactScope: "Territorial scope",
-    scopeValue: "Fergana Region",
+    scopeValue: "Fergana District",
     channelTitle: "Official contact",
     channelText:
       "Telephone, email and reception address will be published after confirmation by the responsible organisation.",
@@ -509,10 +509,10 @@ export const copy = {
   ru: {
     brand: "Фергана Инвест",
     authority: "Хокимият Ферганского района",
-    territory: "ФЕРГАНСКАЯ ОБЛАСТЬ · УЗБЕКИСТАН",
+    territory: "ФЕРГАНСКИЙ РАЙОН · УЗБЕКИСТАН",
     nav: [
       "Главная",
-      "Об области",
+      "О районе",
       "Зоны и объекты",
       "Инвестору",
       "Материалы",
@@ -522,9 +522,9 @@ export const copy = {
     explore: "Изучить возможности",
     guideCta: "Путь инвестора",
     heroEyebrow: "От идеи к возможностям",
-    heroTitle: "Следующая точка\nроста вашего бизнеса —\nФергана.",
+    heroTitle: "Ферганский район",
     heroText:
-      "Производство, партнёрство и новые рынки. Изучите инвестиционные возможности Ферганской области в одном месте.",
+      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
     heroCaption: "Иллюстрация, вдохновлённая Ферганской долиной",
     scroll: "Откройте возможности",
     pillars: [
@@ -537,10 +537,10 @@ export const copy = {
       "Для новых производственных проектов",
       "Практические шаги от идеи до обращения",
     ],
-    aboutEyebrow: "Почему Фергана?",
-    aboutTitle: "Богатые традиции.\nШирокие возможности.",
+    aboutEyebrow: "Ферганский район",
+    aboutTitle: "Объекты Ферганского района",
     aboutText:
-      "Фергана объединяет традиции ремесла, предпринимательства и промышленности. При выборе площадки оцените направление проекта, инфраструктуру и логистику вместе.",
+      "Для проекта в Ферганском районе рынок, инфраструктура и логистика оцениваются по конкретному объекту. Неподтверждённые статистические данные не публикуются.",
     aboutPoints: [
       "Производственная и предпринимательская среда",
       "Региональная торговля и партнёрство",
@@ -551,17 +551,17 @@ export const copy = {
     zoneEyebrow: "География инвестиций",
     zoneTitle: "Место для\nвашего проекта.",
     zoneIntro:
-      "Познакомьтесь со свободной экономической зоной «Коканд». Доступность площадки, мощности и условия резидентства необходимо подтвердить с ответственной организацией по каждому проекту.",
-    kokand: "Коканд",
+      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
+    kokand: "Ферганский район",
     fez: "Свободная экономическая зона",
     zoneDescription:
       "Экономическая зона для производственных проектов и промышленного партнёрства.",
-    zoneLocation: "Коканд, Ферганская область",
+    zoneLocation: "Ферганский район",
     zoneCardAction: "Изучить зону",
     mapNote:
       "Схема расположения. Не является картой кадастровых границ или свободных участков.",
-    mapLabel: "Схематическая карта Ферганской области",
-    fergana: "Фергана",
+    mapLabel: "Ферганский район",
+    fergana: "Ферганский район",
     margilan: "Маргилан",
     tashkent: "Ташкент",
     sectorEyebrow: "Направления проектов",
@@ -613,11 +613,11 @@ export const copy = {
     ],
     articleTag: "Практическое руководство",
     articleRead: "Читать",
-    bottomTitle: "Начнём новый\nпроект в Фергане?",
+    bottomTitle: "Ферганский район",
     bottomText:
       "Превратите идею в понятную концепцию. Подготовьтесь к следующему разговору.",
     footerText:
-      "Информационный портал об инвестиционных возможностях Ферганской области и подготовке инвесторов.",
+      "Информационный портал об инвестиционных возможностях Ферганского района и подготовке инвесторов.",
     footerNav: "Портал",
     footerSources: "Официальные источники",
     ministry: "Министерство инвестиций",
@@ -638,9 +638,9 @@ export const copy = {
     skip: "Перейти к основному содержанию",
     back: "Назад",
     home: "Главная",
-    regionTitle: "Фергана.\nОткрыта к партнёрству.",
+    regionTitle: "Ферганский район",
     regionLead:
-      "Выбор площадки начинается с совместной оценки рынка, ресурсов и инфраструктуры.",
+      "Для проекта в Ферганском районе рынок, инфраструктура и логистика оцениваются по конкретному объекту. Неподтверждённые статистические данные не публикуются.",
     regionCards: ["Логистика", "Местное партнёрство", "Инфраструктура"],
     regionCardTexts: [
       "Рассчитайте маршруты поставок, таможенные требования и транспортные расходы проекта.",
@@ -648,13 +648,13 @@ export const copy = {
       "Подтвердите условия подключения электричества, газа, воды и транспорта для конкретной площадки.",
     ],
     regionNote:
-      "Статистика и точные мощности для инвестиционного решения требуют отдельного подтверждения по официальным источникам.",
-    zonesPageTitle: "Свободная экономическая\nзона «Коканд»",
+      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
+    zonesPageTitle: "Объекты Ферганского района",
     zoneDetailLead:
-      "Изучите возможности размещения производственного проекта в Ферганской области.",
+      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
     overview: "Общие сведения",
     zoneDetailText:
-      "При обсуждении проекта в СЭЗ «Коканд» уточняются вид деятельности, требования к площадке и процедура резидентства. Этот портал не принимает решений о выделении земли, резидентстве или льготах.",
+      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
     verifyTitle: "Проверьте перед решением",
     verification: [
       "Критерии приёма резидентов",
@@ -685,7 +685,7 @@ export const copy = {
     ],
     sourceStatus: "Источники и статус проверки",
     sourceText:
-      "Официальные источники проверены в интернете. В карточках отдельно указаны дата документа и дата проверки. Наличие участков, аренда и условия аукциона требуют подтверждения по каждому объекту.",
+      "Сведения об объектах Ферганского района готовятся к официальному подтверждению. Данные без подтверждённых источников, дат и условий не представляются как действующее предложение.",
     sourceLink: "Открыть официальный сайт",
     sourceExternal: "Внешний источник",
     download: "Скачать",
@@ -695,7 +695,7 @@ export const copy = {
       "Подготовьте сведения о проекте. Презентационная форма не отправляет их организации.",
     contactOwner: "Название портала",
     contactScope: "Территориальный охват",
-    scopeValue: "Ферганская область",
+    scopeValue: "Ферганский район",
     channelTitle: "Официальные контакты",
     channelText:
       "Телефон, email и адрес приёма будут опубликованы после подтверждения ответственной организацией.",
@@ -759,10 +759,10 @@ export const copy = {
   tr: {
     brand: "Fergana Invest",
     authority: "Fergana İlçe Yönetimi",
-    territory: "FERGANA BÖLGESİ · ÖZBEKİSTAN",
+    territory: "FERGANA İLÇESİ · ÖZBEKİSTAN",
     nav: [
       "Ana sayfa",
-      "Bölge hakkında",
+      "İlçe hakkında",
       "Bölgeler ve taşınmazlar",
       "Yatırımcılar için",
       "Kaynaklar",
@@ -772,9 +772,9 @@ export const copy = {
     explore: "Fırsatları keşfedin",
     guideCta: "Yatırımcı yol haritası",
     heroEyebrow: "Fikirden fırsata",
-    heroTitle: "İşinizin bir sonraki\nadresi.\nFergana.",
+    heroTitle: "Fergana İlçesi",
     heroText:
-      "Üretim, ortaklıklar ve yeni pazarlar. Fergana Bölgesi’nin yatırım fırsatlarını tek bir yerde keşfedin.",
+      "Fergana İlçesi taşınmazlarına ilişkin resmî bilgiler onay bekliyor. Alan, hukuki haklar, altyapı ve fiyatlar her taşınmaz için ayrı doğrulanmalıdır.",
     heroCaption: "Fergana Vadisi’nden ilham alan bir illüstrasyon",
     scroll: "Fırsatları keşfedin",
     pillars: [
@@ -787,10 +787,10 @@ export const copy = {
       "Yeni üretim projeleri için",
       "Fikirden başvuruya pratik adımlar",
     ],
-    aboutEyebrow: "Neden Fergana?",
-    aboutTitle: "Köklü gelenekler.\nGeniş fırsatlar.",
+    aboutEyebrow: "Fergana İlçesi",
+    aboutTitle: "Fergana İlçesi taşınmazları",
     aboutText:
-      "Fergana; zanaat, girişimcilik ve sanayi geleneklerini bir araya getirir. Proje yerini seçerken sektör, altyapı ve lojistik ihtiyaçlarını birlikte değerlendirin.",
+      "Fergana İlçesi projesinde pazar, altyapı ve lojistik ihtiyaçları taşınmaz bazında değerlendirilir. Doğrulanmamış istatistikler sunulmaz.",
     aboutPoints: [
       "Üretim ve girişimcilik ortamı",
       "Bölgesel ticaret ve ortaklıklar",
@@ -801,17 +801,17 @@ export const copy = {
     zoneEyebrow: "Yatırım coğrafyası",
     zoneTitle: "Hedefleriniz için\ndoğru yer.",
     zoneIntro:
-      "Kokand Serbest Ekonomik Bölgesi’ni tanıyın. Yer uygunluğu, kapasite ve yerleşik statüsü koşulları her proje için sorumlu kuruluşla doğrulanmalıdır.",
-    kokand: "Kokand",
+      "Fergana İlçesi taşınmazlarına ilişkin resmî bilgiler onay bekliyor. Alan, hukuki haklar, altyapı ve fiyatlar her taşınmaz için ayrı doğrulanmalıdır.",
+    kokand: "Fergana İlçesi",
     fez: "Serbest Ekonomik Bölge",
     zoneDescription:
       "Üretim projeleri ve sanayi ortaklıkları için ekonomik bölge.",
-    zoneLocation: "Kokand, Fergana Bölgesi",
+    zoneLocation: "Fergana İlçesi",
     zoneCardAction: "Bölgeyi keşfedin",
     mapNote:
       "Şematik konum haritası. Kadastro sınırlarını veya uygun arsaları göstermez.",
-    mapLabel: "Fergana Bölgesi şematik haritası",
-    fergana: "Fergana",
+    mapLabel: "Fergana İlçesi",
+    fergana: "Fergana İlçesi",
     margilan: "Margilan",
     tashkent: "Taşkent",
     sectorEyebrow: "Proje alanları",
@@ -862,11 +862,11 @@ export const copy = {
     ],
     articleTag: "Pratik rehber",
     articleRead: "Rehberi okuyun",
-    bottomTitle: "Fergana’da yeni bir\nprojeye hazır mısınız?",
+    bottomTitle: "Fergana İlçesi",
     bottomText:
       "Fikrinizi anlaşılır bir proje özetine dönüştürün. Bir sonraki görüşmeye hazırlanın.",
     footerText:
-      "Fergana Bölgesi yatırım fırsatları ve yatırımcı hazırlığı için bilgi portalı.",
+      "Fergana İlçesi yatırım fırsatları ve yatırımcı hazırlığı için bilgi portalı.",
     footerNav: "Portal",
     footerSources: "Resmî kaynaklar",
     ministry: "Yatırım Bakanlığı",
@@ -887,9 +887,9 @@ export const copy = {
     skip: "Ana içeriğe geç",
     back: "Geri",
     home: "Ana sayfa",
-    regionTitle: "Fergana.\nOrtaklığa açık.",
+    regionTitle: "Fergana İlçesi",
     regionLead:
-      "Proje yeri seçimi; pazar, kaynak ve altyapının birlikte değerlendirilmesiyle başlar.",
+      "Fergana İlçesi projesinde pazar, altyapı ve lojistik ihtiyaçları taşınmaz bazında değerlendirilir. Doğrulanmamış istatistikler sunulmaz.",
     regionCards: ["Lojistik", "Yerel ortaklıklar", "Altyapı"],
     regionCardTexts: [
       "Projeniz için teslimat rotalarını, gümrük gereksinimlerini ve taşıma maliyetlerini hesaplayın.",
@@ -897,13 +897,13 @@ export const copy = {
       "Belirli bir yer için elektrik, gaz, su ve ulaşım bağlantı koşullarını doğrulayın.",
     ],
     regionNote:
-      "Yatırım kararında kullanılacak istatistik ve kapasite verileri resmî kaynaklardan ayrıca doğrulanmalıdır.",
-    zonesPageTitle: "Kokand Serbest\nEkonomik Bölgesi",
+      "Fergana İlçesi taşınmazlarına ilişkin resmî bilgiler onay bekliyor. Alan, hukuki haklar, altyapı ve fiyatlar her taşınmaz için ayrı doğrulanmalıdır.",
+    zonesPageTitle: "Fergana İlçesi taşınmazları",
     zoneDetailLead:
-      "Fergana Bölgesi’nde bir üretim projesi yerleştirme fırsatlarını keşfedin.",
+      "Fergana İlçesi taşınmazlarına ilişkin resmî bilgiler onay bekliyor. Alan, hukuki haklar, altyapı ve fiyatlar her taşınmaz için ayrı doğrulanmalıdır.",
     overview: "Genel bakış",
     zoneDetailText:
-      "Kokand Serbest Ekonomik Bölgesi proje görüşmesinde faaliyet, yer gereksinimleri ve yerleşik statüsü süreci netleştirilir. Bu portal arsa, yerleşik statüsü veya teşvik tahsis etmez.",
+      "Fergana İlçesi taşınmazlarına ilişkin resmî bilgiler onay bekliyor. Alan, hukuki haklar, altyapı ve fiyatlar her taşınmaz için ayrı doğrulanmalıdır.",
     verifyTitle: "Karardan önce doğrulayın",
     verification: [
       "Yerleşik statüsüne kabul ölçütleri",
@@ -934,7 +934,7 @@ export const copy = {
     ],
     sourceStatus: "Kaynaklar ve doğrulama durumu",
     sourceText:
-      "Resmî kaynaklar çevrimiçi incelendi. Bölge kayıtlarında belge tarihi ve kontrol tarihi ayrı gösterilir. Güncel arsa uygunluğu, kira ve ihale şartları her taşınmaz için doğrulanmalıdır.",
+      "Fergana İlçesi taşınmaz bilgileri resmî onay için hazırlanıyor. Kaynağı, tarihi veya koşulları doğrulanmamış bilgiler mevcut teklif olarak sunulmaz.",
     sourceLink: "Resmî web sitesini aç",
     sourceExternal: "Haricî kaynak",
     download: "İndir",
@@ -944,7 +944,7 @@ export const copy = {
       "Proje bilgilerinizi hazırlayın. Sunum formu bunları bir kuruluşa göndermez.",
     contactOwner: "Portal kimliği",
     contactScope: "Coğrafi kapsam",
-    scopeValue: "Fergana Bölgesi",
+    scopeValue: "Fergana İlçesi",
     channelTitle: "Resmî iletişim",
     channelText:
       "Telefon, email ve kabul adresi sorumlu kuruluş tarafından onaylandıktan sonra yayımlanacaktır.",
@@ -1007,10 +1007,10 @@ export const copy = {
   zh: {
     brand: "费尔干纳投资",
     authority: "费尔干纳区政府",
-    territory: "费尔干纳州 · 乌兹别克斯坦",
+    territory: "费尔干纳区 · 乌兹别克斯坦",
     nav: [
       "首页",
-      "了解地区",
+      "关于本区",
       "经济区与物业",
       "投资指南",
       "资料中心",
@@ -1020,8 +1020,9 @@ export const copy = {
     explore: "探索投资机会",
     guideCta: "投资者路线图",
     heroEyebrow: "从构想到机遇",
-    heroTitle: "企业发展的\n下一站。\n费尔干纳。",
-    heroText: "制造业、合作伙伴与新市场。在这里了解费尔干纳州的投资机会。",
+    heroTitle: "费尔干纳区",
+    heroText:
+      "费尔干纳区物业的官方资料有待确认。每处物业的面积、法律权利、基础设施及价格均须单独核实。",
     heroCaption: "以费尔干纳山谷为灵感的插画",
     scroll: "发现更多机会",
     pillars: ["战略区位", "工业潜力", "清晰的投资路线图"],
@@ -1030,10 +1031,10 @@ export const copy = {
       "面向新的制造业项目",
       "从构想到咨询的实用步骤",
     ],
-    aboutEyebrow: "为什么选择费尔干纳？",
-    aboutTitle: "传承深厚。\n机遇广阔。",
+    aboutEyebrow: "费尔干纳区",
+    aboutTitle: "费尔干纳区物业",
     aboutText:
-      "费尔干纳融合了手工艺、创业和工业传统。在选择项目地点时，请综合评估产业方向、基础设施和物流需求。",
+      "费尔干纳区项目的市场、基础设施及物流需求须按具体物业评估。不展示未经确认的统计数据。",
     aboutPoints: [
       "制造业与创业环境",
       "区域贸易与合作",
@@ -1044,15 +1045,15 @@ export const copy = {
     zoneEyebrow: "投资地理",
     zoneTitle: "为您的项目\n寻找合适地点。",
     zoneIntro:
-      "了解浩罕自由经济区。每个项目的场地可用性、容量和入驻条件均须向主管机构核实。",
-    kokand: "浩罕",
+      "费尔干纳区物业的官方资料有待确认。每处物业的面积、法律权利、基础设施及价格均须单独核实。",
+    kokand: "费尔干纳区",
     fez: "自由经济区",
     zoneDescription: "面向制造业项目与工业合作的经济区。",
-    zoneLocation: "浩罕市，费尔干纳州",
+    zoneLocation: "费尔干纳区",
     zoneCardAction: "探索经济区",
     mapNote: "位置示意图，不代表地籍边界或可用土地。",
-    mapLabel: "费尔干纳州位置示意图",
-    fergana: "费尔干纳",
+    mapLabel: "费尔干纳区",
+    fergana: "费尔干纳区",
     margilan: "马尔吉兰",
     tashkent: "塔什干",
     sectorEyebrow: "项目方向",
@@ -1087,9 +1088,9 @@ export const copy = {
     ],
     articleTag: "实用指南",
     articleRead: "阅读指南",
-    bottomTitle: "准备在费尔干纳\n启动新项目吗？",
+    bottomTitle: "费尔干纳区",
     bottomText: "将构想整理成清晰的项目概述，为下一次交流做好准备。",
-    footerText: "介绍费尔干纳州投资机会并帮助投资者准备项目的信息门户。",
+    footerText: "介绍费尔干纳区投资机会并帮助投资者准备项目的信息门户。",
     footerNav: "门户导航",
     footerSources: "官方来源",
     ministry: "投资部",
@@ -1109,20 +1110,23 @@ export const copy = {
     skip: "跳转到主要内容",
     back: "返回",
     home: "首页",
-    regionTitle: "费尔干纳。\n开放合作。",
-    regionLead: "选择项目地点，首先要综合评估市场、资源和基础设施。",
+    regionTitle: "费尔干纳区",
+    regionLead:
+      "费尔干纳区项目的市场、基础设施及物流需求须按具体物业评估。不展示未经确认的统计数据。",
     regionCards: ["物流", "本地合作", "基础设施"],
     regionCardTexts: [
       "为项目计算运输路线、海关要求和运输成本。",
       "探索与供应商、制造商和专业人才合作的机会。",
       "针对具体场地确认电力、天然气、水和交通接入条件。",
     ],
-    regionNote: "用于投资决策的统计和具体容量数据须另行依据官方来源核实。",
-    zonesPageTitle: "浩罕\n自由经济区",
-    zoneDetailLead: "探索在费尔干纳州布局制造业项目的可能性。",
+    regionNote:
+      "费尔干纳区物业的官方资料有待确认。每处物业的面积、法律权利、基础设施及价格均须单独核实。",
+    zonesPageTitle: "费尔干纳区物业",
+    zoneDetailLead:
+      "费尔干纳区物业的官方资料有待确认。每处物业的面积、法律权利、基础设施及价格均须单独核实。",
     overview: "概况",
     zoneDetailText:
-      "讨论浩罕自由经济区项目时，应明确经营活动、场地要求和入驻流程。本门户不决定土地分配、入驻资格或优惠待遇。",
+      "费尔干纳区物业的官方资料有待确认。每处物业的面积、法律权利、基础设施及价格均须单独核实。",
     verifyTitle: "决策前请核实",
     verification: [
       "入驻资格标准",
@@ -1152,7 +1156,7 @@ export const copy = {
     ],
     sourceStatus: "来源与核实状态",
     sourceText:
-      "已在线核查官方来源。经济区资料分别标明文件日期和核实日期。当前土地可用性、租赁及拍卖条件须逐项确认。",
+      "费尔干纳区物业资料正在准备官方确认。来源、日期或条件尚未确认的信息不作为真实有效的报价展示。",
     sourceLink: "访问官方网站",
     sourceExternal: "外部来源",
     download: "下载",
@@ -1161,7 +1165,7 @@ export const copy = {
     contactLead: "准备项目信息。演示表单不会向任何机构发送数据。",
     contactOwner: "门户名称",
     contactScope: "地域范围",
-    scopeValue: "费尔干纳州",
+    scopeValue: "费尔干纳区",
     channelTitle: "官方联系方式",
     channelText: "电话、电子邮件和接待地址将在主管机构确认后公布。",
     formTitle: "项目概述",

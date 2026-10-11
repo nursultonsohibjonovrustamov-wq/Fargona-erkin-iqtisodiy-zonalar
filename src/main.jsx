@@ -304,6 +304,9 @@ function SearchModal({ onClose }) {
     ...catalogSearchEntries(lang),
   ].filter((x) =>
     normalize(x.title + " " + x.description).includes(normalize(query.trim())),
+  ).sort((a, b) =>
+    Number(normalize(b.title).includes(normalize(query.trim()))) -
+    Number(normalize(a.title).includes(normalize(query.trim())))
   );
   return (
     <dialog
@@ -359,122 +362,13 @@ function SearchModal({ onClose }) {
 function MapIllustration() {
   const { t } = usePortal();
   return (
-    <div className="map-wrapper">
-      <svg
-        className="region-map"
-        viewBox="0 0 660 460"
-        role="img"
-        aria-labelledby="map-title"
-      >
-        <title id="map-title">{t.mapLabel}</title>
-        <defs>
-          <pattern
-            id="grid"
-            width="36"
-            height="36"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M36 0H0v36"
-              stroke="#dde3d8"
-              strokeWidth=".6"
-              fill="none"
-            />
-          </pattern>
-          <linearGradient id="map-fill" x2="1" y2="1">
-            <stop stopColor="#c0cfb6" />
-            <stop offset="1" stopColor="#89a58b" />
-          </linearGradient>
-        </defs>
-        <rect width="660" height="460" fill="#f0f1e8" />
-        <rect width="660" height="460" fill="url(#grid)" />
-        <path
-          d="m70 132 38-33 59 19 47-23 45 8 39 36 51 2 44 24 68-3 49 34 44 3 40 32-4 48-35 34-64 8-50 33-45-8-41 28-38-17-37 10-37-27-41 2-36-35-27-50-47-12-15-42Z"
-          fill="url(#map-fill)"
-          stroke="#577c63"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M91 176q69-36 111 19t149 34 156 67"
-          stroke="#fffdf4"
-          strokeWidth="4"
-          fill="none"
-        />
-        <path
-          d="M88 280q103-101 213-48t258 4"
-          stroke="#9ebaba"
-          strokeWidth="6"
-          fill="none"
-          opacity=".8"
-        />
-        <path
-          d="m166 189 241 91 60-59"
-          stroke="#436954"
-          strokeDasharray="5 7"
-          strokeWidth="1.5"
-          fill="none"
-        />
-        <circle cx="166" cy="189" r="22" fill="#164b3b" opacity=".1" />
-        <circle
-          cx="166"
-          cy="189"
-          r="11"
-          fill="#164b3b"
-          stroke="#f7f4e9"
-          strokeWidth="3"
-        />
-        <circle
-          cx="407"
-          cy="280"
-          r="6"
-          fill="#496e54"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <circle
-          cx="467"
-          cy="221"
-          r="6"
-          fill="#496e54"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <text
-          x="166"
-          y="150"
-          textAnchor="middle"
-          fill="#143e32"
-          fontSize="22"
-          fontWeight="600"
-        >
-          {t.kokand}
-        </text>
-        <text x="407" y="314" textAnchor="middle" fill="#244f3b" fontSize="16">
-          {t.fergana}
-        </text>
-        <text x="467" y="205" textAnchor="middle" fill="#244f3b" fontSize="14">
-          {t.margilan}
-        </text>
-        <path
-          d="M590 70v-28m-6 10 6-10 6 10"
-          stroke="#597561"
-          strokeWidth="1.5"
-        />
-        <text x="590" y="31" fill="#597561" textAnchor="middle" fontSize="11">
-          N
-        </text>
-        <path d="m80 68-27-21m1 10-1-10 10 1" stroke="#94a28e" />
-        <text x="89" y="77" fill="#94a28e" fontSize="12">
-          {t.tashkent}
-        </text>
-      </svg>
-      <div className="map-legend">
-        <span>
-          <i />
-          {t.fez}
-        </span>
-        <Compass size={20} />
-      </div>
+    <div
+      className="map-wrapper"
+      style={{ padding: "48px 32px", textAlign: "center" }}
+    >
+      <MapPin size={64} strokeWidth={1.2} aria-hidden="true" />
+      <h3>{t.scopeValue}</h3>
+      <p>{t.authority}</p>
       <p className="map-note">{t.mapNote}</p>
     </div>
   );

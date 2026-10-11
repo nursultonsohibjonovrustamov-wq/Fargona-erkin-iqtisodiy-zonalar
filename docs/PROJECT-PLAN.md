@@ -1,3 +1,5 @@
+> HUDUDIY TUZATISH: avvalgi viloyat qamrovi foydalanuvchi talabiga mos kelmagan. Joriy sayt faqat Farg‘ona tumani uchun. Quyidagi viloyat ma’lumotlari va test sonlari tarixiy; joriy ma’lumotlar DISTRICT-SOURCES.md va CATALOG-QA.md da.
+
 # Loyihaning tahlili va bajarilgan ishlar
 
 ## 2026-10-11 — yangi talab bo‘yicha yangilanish
