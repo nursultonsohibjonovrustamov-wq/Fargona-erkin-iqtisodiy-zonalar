@@ -1,0 +1,29 @@
+FARG‘ONA INVEST — TAQDIMOT PAKETI
+
+Tashkilot nomi: Farg‘ona tumani hokimligi.
+Hududiy qamrov: Farg‘ona viloyati.
+Tillar: o‘zbek, rus, ingliz, turk, soddalashtirilgan xitoy.
+
+ARXIVDAN ISHGA TUSHIRISH
+1. ZIP arxivni alohida papkaga oching.
+2. Python 3 mavjud qurilmada o‘sha papkada terminal oching.
+3. Ishga tushiring: python3 run-demo.py --port 4173
+   Windows’da: python run-demo.py --port 4173
+4. Server shu qurilmada 4173-portda ishlaydi. Brauzerda oching.
+5. To‘xtatish: Ctrl+C.
+
+Node.js yoki npm arxivdagi tayyor versiyani ko‘rsatish uchun shart emas.
+Server tilda chuqur sahifalarni ham ochadi. Sayt tasvirlari va shriftlari
+uchun Internet shart emas. Rasmiy manba va xarita havolalari uchun Internet kerak.
+
+Taqdimot tartibi va tasdiqlanishi kerak bo‘lgan ma’lumotlar:
+PROJECT-PLAN.md. Tekshiruv natijalari: VALIDATION.md.
+
+Forma loyiha kartasini faqat shu brauzerda saqlaydi; tashkilotga yubormaydi.
+Sinov uchun sun’iy ma’lumotdan foydalaning va ko‘rsatishdan keyin kartani o‘chiring.
+Rasmiy statistika, aloqa kanallari, to‘liq zona ro‘yxati va tarjimalar
+rasmiy nashrdan oldin tasdiqlanishi kerak.
+
+YANGILANGAN KATALOG (2026-10-11)
+7 ta zona/hudud kartasi va 14 ta E-auksion loti mavjud. Bu 7 ta mustaqil EIZ yoki viloyatning to‘liq rasmiy reyestri degani emas. Narxlar boshlang‘ich auksion narxlari, ijara haqi emas. Ijara muddati va alohida lot maydoni tasdiqlanmagan.
+Fargona-sayt-demo.html faylini arxivdan chiqaring va brauzer bilan oching. Sahifalar, tillar va suratlar shu faylda joylangan. Rasmiy manba havolalari Internet talab qiladi.
