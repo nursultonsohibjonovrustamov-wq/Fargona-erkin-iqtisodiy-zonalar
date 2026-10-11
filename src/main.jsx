@@ -168,8 +168,8 @@ function Brand({ footer = false }) {
         <span />
       </span>
       <span>
-        <strong>{t.brand}</strong>
-        <small>{t.authority}</small>
+        <strong>{t.authority}</strong>
+        <small>{t.brand}</small>
       </span>
     </Link>
   );
@@ -299,15 +299,17 @@ function SearchModal({ onClose }) {
       .toLocaleLowerCase()
       .normalize("NFKD")
       .replace(/[‘’'`ʼ]/g, "");
-  const entries = [
-    ...searchEntries(lang),
-    ...catalogSearchEntries(lang),
-  ].filter((x) =>
-    normalize(x.title + " " + x.description).includes(normalize(query.trim())),
-  ).sort((a, b) =>
-    Number(normalize(b.title).includes(normalize(query.trim()))) -
-    Number(normalize(a.title).includes(normalize(query.trim())))
-  );
+  const entries = [...searchEntries(lang), ...catalogSearchEntries(lang)]
+    .filter((x) =>
+      normalize(x.title + " " + x.description).includes(
+        normalize(query.trim()),
+      ),
+    )
+    .sort(
+      (a, b) =>
+        Number(normalize(b.title).includes(normalize(query.trim()))) -
+        Number(normalize(a.title).includes(normalize(query.trim()))),
+    );
   return (
     <dialog
       ref={dialogRef}

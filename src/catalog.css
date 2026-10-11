@@ -333,3 +333,447 @@
     padding: 22px;
   }
 }
+/* Institutional presentation: restrained navy, white and pale gold. */
+.institution-hero {
+  background: #0c2444;
+  color: #fff;
+  border-bottom: 4px solid #bfa363;
+}
+.institution-hero-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.institution-hero-copy .eyebrow {
+  color: #e1c992;
+}
+.institution-hero-copy h1 {
+  font-size: clamp(34px, 4.3vw, 60px);
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+  max-width: 780px;
+  margin: 18px 0 24px;
+}
+.institution-hero-copy > p {
+  color: #d5dfec;
+  font-size: 17px;
+  max-width: 660px;
+}
+.institution-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.institution-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 50px;
+}
+.institution-actions .primary-link {
+  background: #e6d5b0;
+  color: #0c2444;
+  border: 1px solid #e6d5b0;
+}
+.institution-actions .secondary-link {
+  border: 1px solid #71839c;
+  color: #fff;
+  background: transparent;
+}
+.institution-actions a:hover {
+  filter: brightness(1.06);
+}
+.institution-hero-summary {
+  padding: 30px;
+  border: 1px solid #4c607b;
+  background: #173252;
+  border-radius: 8px;
+}
+.institution-hero-summary > p:first-child,
+.institution-hero-summary > span {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #e1c992;
+}
+.institution-hero-summary h2 {
+  color: white;
+  font-size: 29px;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+.institution-hero-summary p {
+  font-size: 14px;
+  color: #d6dfeb;
+  line-height: 1.7;
+}
+.institution-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  border-top: 1px solid #4c607b;
+  padding-top: 24px;
+  margin-top: 24px;
+}
+.institution-metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.institution-metrics strong {
+  color: #fff;
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 1;
+}
+.institution-metrics span {
+  font-size: 11px;
+  color: #c7d4e5;
+  line-height: 1.45;
+}
+.catalog-heading {
+  margin-top: 45px;
+  margin-bottom: 28px;
+}
+.catalog-heading .eyebrow {
+  color: #436489;
+}
+.catalog-heading h2 {
+  font-size: 36px;
+  margin: 14px 0;
+}
+.catalog-heading p {
+  max-width: 820px;
+  color: #54647b;
+}
+.catalog-hero {
+  padding: 48px 0 32px;
+}
+.catalog-hero h1 {
+  color: #122c4d;
+  font-size: clamp(32px, 4.3vw, 52px);
+}
+.catalog-hero > p:not(.eyebrow) {
+  font-size: 16px;
+  color: #52637a;
+}
+.catalog-disclaimer {
+  background: #f2f5f8;
+  color: #334965;
+  border-color: #dce3eb;
+  border-left: 3px solid #bfa363;
+  border-radius: 5px;
+}
+.catalog-section {
+  color: #142f50;
+}
+.catalog-filters {
+  background: #fff;
+  border-color: #dce3eb;
+  border-radius: 7px;
+  padding: 22px;
+  gap: 20px;
+}
+.catalog-filters label {
+  color: #223c5a;
+  font-size: 13px;
+}
+.catalog-filters select {
+  background: #f8fafc;
+  border-color: #ced8e4;
+  color: #1e395a;
+  border-radius: 4px;
+  min-height: 46px;
+  font-size: 14px;
+}
+.catalog-note {
+  color: #617086;
+  font-size: 13px;
+}
+.catalog-grid {
+  gap: 24px;
+}
+.catalog-card {
+  border-color: #dce3eb;
+  border-radius: 7px;
+  box-shadow: 0 3px 12px #142f5005;
+}
+.catalog-card-visual {
+  min-height: 128px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 28px;
+  background: #eff3f8;
+  color: #27496f;
+  gap: 24px;
+}
+.catalog-card-visual svg {
+  width: 48px;
+  height: 48px;
+}
+.catalog-card-visual span {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #425d7d;
+}
+.catalog-card-body {
+  padding: 25px;
+}
+.catalog-card-body .eyebrow {
+  color: #58708d;
+}
+.catalog-card h2 {
+  font-size: 26px;
+  line-height: 1.25;
+  color: #143354;
+  margin: 15px 0 22px;
+}
+.catalog-facts {
+  gap: 15px 20px;
+}
+.catalog-facts div {
+  border-color: #e4eaf1;
+}
+.catalog-facts dt {
+  color: #526780;
+  font-size: 12px;
+}
+.catalog-facts dd {
+  color: #193957;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.catalog-card .button {
+  border-radius: 4px;
+  font-size: 13px;
+}
+.catalog-card-body > p.catalog-note {
+  line-height: 1.65;
+}
+.catalog-property-section {
+  margin-top: 48px;
+}
+.catalog-property-section > h2 {
+  font-size: 34px;
+  color: #173454;
+  margin-bottom: 16px;
+}
+.catalog-property-section .catalog-card h3 {
+  font-size: 20px;
+  color: #173454;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.catalog-lot-image {
+  background: #edf1f6;
+  border-bottom: 1px solid #dce3eb;
+}
+.catalog-lot-image img {
+  height: 220px;
+  background: #edf1f6;
+}
+.catalog-lot-image figcaption {
+  color: #596d86;
+  font-size: 11px;
+  padding: 12px 20px;
+  background: #f7f9fc;
+}
+.catalog-lot-image figcaption a {
+  white-space: nowrap;
+}
+.catalog-information article,
+.catalog-summary {
+  border-color: #dce3eb;
+  border-radius: 7px;
+}
+.catalog-information h2,
+.catalog-summary h2 {
+  color: #1c3a5a;
+}
+.catalog-information p {
+  font-size: 14px;
+  color: #526780;
+}
+.catalog-status {
+  background: #edf2f7;
+  color: #526a87;
+  font-size: 11px;
+}
+.catalog-empty {
+  background: #f4f6f9;
+  border-color: #c7d2df;
+  border-radius: 7px;
+  color: #546880;
+}
+.catalog-photo-placeholder {
+  background: #edf2f8;
+  color: #49617e;
+  border-radius: 7px;
+}
+.catalog-photo-placeholder h2 {
+  color: #2c496a;
+}
+.catalog-photo-placeholder p {
+  font-size: 14px;
+}
+.catalog-auctions > h2 {
+  color: #193b60;
+}
+.catalog-official-links a {
+  color: #214d7c;
+  border-color: #d9e2ed;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.catalog-back {
+  color: #375d88;
+  font-size: 14px;
+}
+.catalog-historical-photo {
+  background: #eef2f7;
+  border: 1px solid #dce3eb;
+  border-radius: 7px;
+}
+.catalog-historical-photo figcaption {
+  color: #586e89;
+}
+.catalog-district-overview {
+  border-color: #dce3eb;
+  color: #274463;
+}
+.catalog-district-fields svg {
+  color: #547398;
+}
+@media (max-width: 1024px) {
+  .institution-hero-inner {
+    gap: 35px;
+    grid-template-columns: 1.2fr 1fr;
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+  .institution-hero-summary {
+    padding: 24px;
+  }
+  .institution-hero-copy h1 {
+    font-size: 42px;
+  }
+  .institution-metrics {
+    gap: 9px;
+  }
+  .institution-metrics strong {
+    font-size: 28px;
+  }
+  .institution-metrics span {
+    font-size: 10px;
+  }
+  .catalog-card h2 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 760px) {
+  .institution-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+  .institution-hero-copy h1 {
+    font-size: 36px;
+  }
+  .institution-hero-copy > p {
+    font-size: 15px;
+  }
+  .institution-hero-summary {
+    padding: 24px;
+  }
+  .institution-hero-summary h2 {
+    font-size: 26px;
+  }
+  .institution-metrics span {
+    font-size: 12px;
+  }
+  .catalog-heading {
+    margin-top: 34px;
+  }
+  .catalog-heading h2 {
+    font-size: 30px;
+  }
+  .catalog-filters {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 18px;
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-card-visual {
+    min-height: 106px;
+    padding: 22px;
+  }
+  .catalog-card-body {
+    padding: 22px;
+  }
+  .catalog-lot-image img {
+    height: 210px;
+  }
+  .catalog-detail-top {
+    grid-template-columns: 1fr;
+  }
+  .catalog-property-section .catalog-card h3 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 420px) {
+  .institution-hero-copy h1 {
+    font-size: 33px;
+  }
+  .institution-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+  .institution-actions a {
+    width: 100%;
+  }
+  .institution-metrics strong {
+    font-size: 27px;
+  }
+  .institution-metrics span {
+    font-size: 11px;
+  }
+  .catalog-filters {
+    grid-template-columns: 1fr;
+  }
+  .catalog-information {
+    grid-template-columns: 1fr;
+  }
+  .catalog-facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .catalog-facts dd {
+    font-size: 13px;
+  }
+  .catalog-card h2 {
+    font-size: 23px;
+  }
+  .catalog-heading h2 {
+    font-size: 28px;
+  }
+  .catalog-lot-image figcaption a {
+    white-space: normal;
+  }
+}

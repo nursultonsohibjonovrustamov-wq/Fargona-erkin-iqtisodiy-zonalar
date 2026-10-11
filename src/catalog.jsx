@@ -310,7 +310,85 @@ function Facts({ zone, c, lang }) {
     </dl>
   );
 }
-export function Catalog({ lang, Link, ButtonLink }) {
+const institutionCopy = {
+  uz: {
+    title: "Farg‘ona tumani\nInvestitsiya imkoniyatlari",
+    lead: "Sanoat hududlari, yer uchastkalari va loyihalar uchun yagona axborot maydoni.",
+    explore: "Obyektlar katalogi",
+    guide: "Investor uchun qo‘llanma",
+    summary: "Sanoat va tadbirkorlik",
+    description:
+      "Farg‘ona tumani bo‘yicha E-auksion manbalaridan olingan sanoat lotlari.",
+    lots: "Auksion lotlari",
+    categories: "Lot toifalari",
+    languages: "Portal tillari",
+    heading: "Sanoat hududlari va obyektlar",
+    intro:
+      "Lot toifasini tanlang, obyektlarni solishtiring va rasmiy savdo shartlari bilan tanishing.",
+  },
+  en: {
+    title: "Fergana District\nInvestment opportunities",
+    lead: "A single information hub for industrial sites, land plots and investment projects.",
+    explore: "Property directory",
+    guide: "Investor guide",
+    summary: "Industry and enterprise",
+    description:
+      "Industrial auction listings for Fergana District, sourced from E-auksion.",
+    lots: "Auction listings",
+    categories: "Listing categories",
+    languages: "Portal languages",
+    heading: "Industrial sites and properties",
+    intro:
+      "Choose a category, compare properties and review the official auction terms.",
+  },
+  ru: {
+    title: "Ферганский район\nИнвестиционные возможности",
+    lead: "Единое информационное пространство для промышленных площадок, земельных участков и проектов.",
+    explore: "Каталог объектов",
+    guide: "Руководство инвестора",
+    summary: "Промышленность и бизнес",
+    description:
+      "Промышленные лоты Ферганского района из источников E-auksion.",
+    lots: "Аукционные лоты",
+    categories: "Категории лотов",
+    languages: "Языки портала",
+    heading: "Промышленные площадки и объекты",
+    intro:
+      "Выберите категорию, сравните объекты и ознакомьтесь с официальными условиями торгов.",
+  },
+  tr: {
+    title: "Fergana ilçesi\nYatırım fırsatları",
+    lead: "Sanayi alanları, arazi parselleri ve yatırım projeleri için ortak bilgi platformu.",
+    explore: "Mülk kataloğu",
+    guide: "Yatırımcı rehberi",
+    summary: "Sanayi ve girişimcilik",
+    description:
+      "E-auksion kaynaklarından Fergana ilçesi sanayi ihale kayıtları.",
+    lots: "İhale kayıtları",
+    categories: "Kayıt kategorileri",
+    languages: "Portal dilleri",
+    heading: "Sanayi alanları ve mülkler",
+    intro:
+      "Kategori seçin, mülkleri karşılaştırın ve resmî ihale koşullarını inceleyin.",
+  },
+  zh: {
+    title: "费尔干纳区\n投资机会",
+    lead: "工业场地、土地及投资项目的一站式信息平台。",
+    explore: "物业目录",
+    guide: "投资者指南",
+    summary: "工业与创业",
+    description: "来自E-auksion的费尔干纳区工业拍卖信息。",
+    lots: "拍卖标的",
+    categories: "标的类别",
+    languages: "平台语言",
+    heading: "工业场地与物业",
+    intro: "选择类别、比较物业并查看官方拍卖条件。",
+  },
+};
+export const institutionTitle = (lang) => institutionCopy[lang].title;
+
+export function Catalog({ lang, Link, ButtonLink, home = false }) {
+  const institution = institutionCopy[lang] || institutionCopy.uz;
   const c = words(lang);
   const [region, setRegion] = useState("all");
   const [area, setArea] = useState("all");
@@ -337,15 +415,61 @@ export function Catalog({ lang, Link, ButtonLink }) {
   );
   return (
     <>
-      <section className="catalog-hero container">
-        <p className="eyebrow">{c[0]}</p>
-        <h1>{c[1]}</h1>
-        <p>{c[2]}</p>
-        <div className="catalog-disclaimer">
-          <ShieldCheck size={19} />
-          {c[41]}
+      {home ? (
+        <section className="institution-hero">
+          <div className="container institution-hero-inner">
+            <div className="institution-hero-copy">
+              <p className="eyebrow">
+                {c[0]}
+              </p>
+              <h1>{institution.title}</h1>
+              <p>{institution.lead}</p>
+              <div className="institution-actions">
+                <Link to="/zones" className="primary-link">
+                  {institution.explore}
+                  <ArrowUpRight size={18} />
+                </Link>
+                <Link to="/investor" className="secondary-link">
+                  {institution.guide}
+                  <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </div>
+            <aside className="institution-hero-summary">
+              <Building2 size={36} strokeWidth={1.3} aria-hidden="true" />
+              <h2>{institution.summary}</h2>
+              <p>{institution.description}</p>
+              <div className="institution-metrics">
+                <div>
+                  <strong>{catalogProperties.length}</strong>
+                  <span>{institution.lots}</span>
+                </div>
+                <div>
+                  <strong>{catalogZones.length}</strong>
+                  <span>{institution.categories}</span>
+                </div>
+                <div>
+                  <strong>5</strong>
+                  <span>{institution.languages}</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      ) : (
+        <section className="catalog-hero container">
+          <p className="eyebrow">{c[0]}</p>
+          <h1>{institution.heading}</h1>
+          <p>{institution.intro}</p>
+        </section>
+      )}
+      {home && (
+        <div className="container catalog-heading">
+          <p className="eyebrow">{c[0]}</p>
+          <h2>{institution.heading}</h2>
+          <p>{institution.intro}</p>
         </div>
-      </section>
+      )}
       <section className="container catalog-section">
         <div className="catalog-filters">
           {filters.map(([label, value, set]) => (
@@ -404,9 +528,9 @@ export function Catalog({ lang, Link, ButtonLink }) {
               key={zone.id}
             >
               <div className="catalog-card-visual">
-                <Factory size={64} strokeWidth={1} />
+                <Factory size={30} strokeWidth={1.4} aria-hidden="true" />
                 <span>
-                  {c[25]} · {c[10]}
+                  {zone.properties.length} · {c[18]}
                 </span>
               </div>
               <div className="catalog-card-body">
@@ -415,7 +539,7 @@ export function Catalog({ lang, Link, ButtonLink }) {
                   {c[5]}
                 </p>
                 <h2>{zone.names[lang] || zone.names.uz}</h2>
-                <Facts zone={zone} c={c} lang={lang} />
+                <p className="catalog-category-description">{c[28]}</p>
                 {zone.areaNote && (
                   <p className="catalog-note">{zone.areaNote[lang]}</p>
                 )}

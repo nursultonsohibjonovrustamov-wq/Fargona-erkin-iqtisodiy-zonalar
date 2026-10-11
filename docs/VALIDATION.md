@@ -1,3 +1,11 @@
+# Rasmiy uslubdagi dizayn yangilanishi — 2026-10-11
+
+Sayt to‘q ko‘k, oq va cheklangan oltin aksentlar bilan qayta ishlangan. Hokimlik nomi asosiy brend; bosh sahifa yangi ikki ustunli axborot paneli, aniq katalog/qo‘llanma tugmalari va manbali lotlar soni bilan tuzilgan. Kategoriya kartalaridagi katta rasm kutish bloklari qisqartirilgan. Barcha sahifalar, formalar va footer bir xil uslubga moslangan.
+
+24 ta brauzer testi tekshirildi. Dastlab ikki accessibility tekshiruvida kichik yozuv kontrasti 4.38:1 chiqdi; rang tuzatildi va ikkala test qayta o‘tdi. Qolgan22test muvaffaqiyatli, yakuniy mustaqilHTML ham qayta tekshirildi. Telefon va desktop tasvirlari vizual ko‘rildi; bo‘lim sarlavhasining chetga chiqishi tuzatildi. Bu dizayn buyurtmachi tomonidan tasdiqlangan degani emas.
+
+---
+
 # Farg‘ona tumani: yakuniy tekshiruv — 2026-10-11
 
 Joriy tuman versiyasida jami 30 ta noyob test o‘tdi: 6 Node, 13 asosiy brauzer, 10 tuman katalogi va 1 mustaqil HTML testi. Birinchi sinovda yangilangan matnlar qidiruvda umumiy sahifani qo‘llanmadan oldin ko‘rsatgani aniqlandi. Sarlavhaga mos natijalar birinchi chiqadigan qilib tuzatildi; ikkala ta’sirlangan test qayta o‘tdi. Parallel runnerlarning umumiy test-results papkasiga yozishi trace fayli kolliziyasini ham keltirdi; qayta sinovda yo‘q.
