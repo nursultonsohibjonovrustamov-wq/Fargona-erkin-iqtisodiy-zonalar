@@ -14,6 +14,8 @@ css = (root / 'dist' / css_path.lstrip('/')).read_text()
 assert 'window.location.pathname' in js
 js = js.replace('window.location.pathname', 'window.__portalPath()')
 js = js.replace('window.location.search', 'window.__portalSearch()')
+# Source documents remain downloadable from the public deployment.
+js = js.replace('/documents/', 'https://fargona-tumani-invest.vercel.app/documents/')
 assets = {}
 for asset in sorted((root / 'public').iterdir()):
     if not asset.is_file() or asset.suffix not in ['.svg','.jpg','.jpeg','.png','.webp']: continue

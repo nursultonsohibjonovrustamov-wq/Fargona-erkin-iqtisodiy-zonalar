@@ -1,3 +1,11 @@
+# Hujjat asosidagi ma’lumotlar — 2026-10-12
+
+6 Node va32brauzer testi o‘tdi: jami38. Yangi8test hujjatdagi loyiha maydonlari umumiy zona maydoniga aylantirilmasligi, lotlarga soxta bog‘lanmasligi,4zona sahifasining5tilda desktop/mobil ko‘rinishi, aslDOCX yuklanishi, alohida66lotkatalogi va accessibilityni tekshiradi. Hujjat source-first; rasmiy tasdiq va hujjat sanasi noma’lum. Aniq narx, ijara va zona fotosuratlari berilmagan joylar ochiq belgilangan. Build va mustaqilHTML tekshiruvi muvaffaqiyatli.
+
+Asl hujjat o‘zgartirilmagan va DOCX sifatida taqdim etilgan. Uchta nomuvofiqlik ACTUAL-DATA-REVIEW.md da qayd etilgan. Ko‘rinish desktop/mobil tasvirlari orqali ham tekshirildi. Quyida oldingi bosqich natijalari.
+
+---
+
 # Rasmiy uslubdagi dizayn yangilanishi — 2026-10-11
 
 Sayt to‘q ko‘k, oq va cheklangan oltin aksentlar bilan qayta ishlangan. Hokimlik nomi asosiy brend; bosh sahifa yangi ikki ustunli axborot paneli, aniq katalog/qo‘llanma tugmalari va manbali lotlar soni bilan tuzilgan. Kategoriya kartalaridagi katta rasm kutish bloklari qisqartirilgan. Barcha sahifalar, formalar va footer bir xil uslubga moslangan.

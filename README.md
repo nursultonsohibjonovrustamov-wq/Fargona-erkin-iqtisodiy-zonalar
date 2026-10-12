@@ -2,13 +2,15 @@
 
 Faqat **Farg‘ona tumani** uchun besh tilli investitsiya portali. Tashkilot: **Farg‘ona tumani hokimligi**. Farg‘ona shahri, Qo‘qon, Quvasoy yoki boshqa tumanlar ushbu katalogga kirmaydi.
 
-## Tuzatilgan hududiy qamrov — 2026-10-11
+## Buyurtmachi hujjati asosidagi kontent — 2026-10-12
 
-E-auksion hududlar lug‘atida Farg‘ona tumani id=88, SOATO=1730233; Farg‘ona shahri alohida id=74. Katalog faqat id=88 so‘rovlari orqali olingan lotlardan tuzilgan. Kichik sanoat zonalari va yoshlar sanoat zonalari — auksion toifalari, mustaqil EIZlar soni yoki hududning to‘liq huquqiy reyestri emas.
+Bosh sahifa va `/zones` endi taqdim etilgan DOCX ma’lumotiga asoslangan. Alohida sahifalar: Qo‘qon EIZning Farg‘ona tumani filiali, Gulpiyon, Yangi Asr va Markaz. Uchta yangi zona uchun loyiha maydoni umumiy zona maydoni deb ko‘rsatilmaydi. Mavjud5zona hujjatda nomsiz, umumiy ko‘rsatkichlar sifatida berilgan.
 
-Rasmiy manbadan boshlang‘ich narx, zakalat, manzil, savdo vaqti, havola va suratlar olingan. Ijara muddati, yer maydoni va infratuzilma manbada tasdiqlanmagan holatda ochiq belgilangan. Boshlang‘ich narx ijara haqi emas. Dalillar: `docs/DISTRICT-SOURCES.md`. Oldingi viloyat tadqiqoti faqat tarixiy qayd, joriy katalog manbasi emas.
+Manba `/documents/fergana-district-industrial-zones.docx` orqali yuklanadi. Qabul qilingan sana2026-10-12, hujjat sanasi va tashqi rasmiy tasdiq tekshirilmagan. Arifmetik nomuvofiqliklar: `docs/ACTUAL-DATA-REVIEW.md`. Ular qat’iy KPI sifatida chiqarilmagan.
 
-Tayyorlash: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`.
+Oldingi66tuman auksion loti `/auctions`da alohida snapshot bo‘lib qoladi. Bu lotlar yangi nomlangan zonalarga mos deb avtomatik biriktirilmagan. Narx ijara haqi emas. Baza va backend hali yo‘q; murojaat kartasi localStorage/faylga saqlanadi, tashkilotga yuborilmaydi.
+
+Kontent manbasi: `src/catalog-data.js`; sahifalar: `src/official-zones.jsx`; tekshiruvlar: `tests/official.spec.js`. Tayyorlash: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`.
 
 ## Bitta faylli taqdimot
 

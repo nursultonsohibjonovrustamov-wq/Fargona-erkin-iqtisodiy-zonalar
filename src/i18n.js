@@ -1222,6 +1222,40 @@ export const copy = {
     ],
   },
 };
+// Publication uses supplied district records; enquiry cards remain local until a backend is connected.
+const publicationLabels = {
+  uz: [
+    "Tuman investitsiya portali",
+    "Zona ma’lumotlari taqdim etilgan hujjatga asoslangan. Murojaat kartasi brauzerda saqlanadi; tashkilotga yuborilmaydi.",
+    "Farg‘ona tumani zonalari taqdim etilgan hujjat asosida kiritilgan. Auksion lotlari alohida manba nusxasi; muayyan zonaga mansubligi tasdiqlanmagan.",
+  ],
+  en: [
+    "District investment portal",
+    "Zone information is based on the supplied document. Enquiry cards are saved in your browser and are not sent to the administration.",
+    "Fergana District zones are listed from the supplied document. Auction listings are a separate source snapshot; membership in a specific zone has not been confirmed.",
+  ],
+  ru: [
+    "Инвестиционный портал района",
+    "Сведения о зонах основаны на предоставленном документе. Карточка обращения сохраняется в браузере и не отправляется в администрацию.",
+    "Зоны Ферганского района внесены по предоставленному документу. Аукционные лоты — отдельный снимок источника; принадлежность конкретной зоне не подтверждена.",
+  ],
+  tr: [
+    "İlçe yatırım portalı",
+    "Bölge bilgileri sunulan belgeye dayanır. Başvuru kartları tarayıcıda saklanır; yönetime gönderilmez.",
+    "Fergana ilçesi bölgeleri sunulan belgeden aktarılmıştır. İhale kayıtları ayrı bir kaynak kopyasıdır; belirli bir bölgeye ait oldukları doğrulanmamıştır.",
+  ],
+  zh: [
+    "区投资门户",
+    "经济区资料依据提供的文件。咨询卡仅保存在浏览器中，不会发送给行政部门。",
+    "费尔干纳区经济区资料来自提供的文件。拍卖信息为单独的来源快照，尚未确认归属具体经济区。",
+  ],
+};
+for (const [lang, values] of Object.entries(publicationLabels)) {
+  copy[lang].demoBadge = values[0];
+  copy[lang].demoNote = values[1];
+  copy[lang].zoneIntro = values[2];
+  copy[lang].sourceText = values[2];
+}
 export const paths = [
   "/",
   "/region",

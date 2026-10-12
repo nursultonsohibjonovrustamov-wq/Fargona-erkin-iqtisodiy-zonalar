@@ -46,7 +46,12 @@ import {
 } from "./i18n";
 import "./styles.css";
 import { Catalog, CatalogDetail, PropertyDetail } from "./catalog";
-import { catalogSearchEntries, getCatalogPageTitle } from "./catalog-data";
+import {
+  catalogSearchEntries,
+  getCatalogPageTitle,
+  officialZones,
+} from "./catalog-data";
+import { OfficialOverview, OfficialZoneDetail } from "./official-zones";
 const Ctx = createContext(null);
 const usePortal = () => useContext(Ctx);
 const sources = [
@@ -299,7 +304,15 @@ function SearchModal({ onClose }) {
       .toLocaleLowerCase()
       .normalize("NFKD")
       .replace(/[‘’'`ʼ]/g, "");
-  const entries = [...searchEntries(lang), ...catalogSearchEntries(lang)]
+  const entries = [
+    ...searchEntries(lang),
+    ...officialZones.map((z) => ({
+      route: `/zones/${z.id}`,
+      title: z.names[lang],
+      description: z.names[lang],
+    })),
+    ...catalogSearchEntries(lang),
+  ]
     .filter((x) =>
       normalize(x.title + " " + x.description).includes(
         normalize(query.trim()),
@@ -1301,7 +1314,7 @@ function App() {
     document.documentElement.lang = lang;
     const i = paths.indexOf(route);
     const ai = articleSlugs.indexOf(route.split("/").pop());
-    document.title = `${i >= 0 ? t.nav[i] : ai >= 0 ? t.articles[ai] : getCatalogPageTitle(lang, route) || (route === "/privacy" ? t.privacy : t.notFound)} — ${t.brand}`;
+    document.title = `${i >= 0 ? t.nav[i] : ai >= 0 ? t.articles[ai] : (route === "/auctions" ? "E-auksion" : undefined) || officialZones.find((z) => route === `/zones/${z.id}`)?.names[lang] || getCatalogPageTitle(lang, route) || (route === "/privacy" ? t.privacy : t.notFound)} — ${t.brand}`;
     document
       .querySelector('meta[name="description"]')
       .setAttribute(
@@ -1313,7 +1326,12 @@ function App() {
   let page =
     route === "/" ? (
       <>
-        <Catalog t={t} lang={lang} Link={Link} ButtonLink={ButtonLink} home />
+        <OfficialOverview
+          lang={lang}
+          Link={Link}
+          ButtonLink={ButtonLink}
+          home
+        />
         <section className="section container">
           <SectionHeading
             eyebrow={t.sectorEyebrow}
@@ -1328,9 +1346,18 @@ function App() {
       <Region />
     ) : route === "/zones" ? (
       <>
-        <Catalog t={t} lang={lang} Link={Link} ButtonLink={ButtonLink} />
+        <OfficialOverview lang={lang} Link={Link} ButtonLink={ButtonLink} />
         <BottomCTA />
       </>
+    ) : route === "/auctions" ? (
+      <Catalog t={t} lang={lang} Link={Link} ButtonLink={ButtonLink} />
+    ) : officialZones.some((z) => route === `/zones/${z.id}`) ? (
+      <OfficialZoneDetail
+        lang={lang}
+        Link={Link}
+        ButtonLink={ButtonLink}
+        id={route.split("/").pop()}
+      />
     ) : route.startsWith("/zones/") && getCatalogPageTitle(lang, route) ? (
       <CatalogDetail
         t={t}

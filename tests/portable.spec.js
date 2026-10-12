@@ -24,8 +24,10 @@ test("offline HTML is an interactive website with working pages and languages", 
   );
   await page.goto("http://127.0.0.1:4173/portable-demo.html");
   await expect(page.locator("h1")).toHaveText(
-    "Farg‘ona tumani\nInvestitsiya imkoniyatlari",
+    "Sanoat hududlari va investitsiya loyihalari",
   );
+  await expect(page.getByTestId("official-zone-card")).toHaveCount(4);
+  await page.locator('a[href="#/uz/auctions"]').click();
   await expect(page.getByTestId("property-card")).toHaveCount(66);
   await expect
     .poll(() =>

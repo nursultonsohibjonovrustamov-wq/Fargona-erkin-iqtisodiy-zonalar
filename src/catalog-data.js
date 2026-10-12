@@ -2263,3 +2263,185 @@ catalogZones[1].areaNote = {
   tr: "PQ-454 (24 Aralık 2024), madde 84, Fergana ilçesi Yuqori Archa gençlik sanayi ve girişimcilik bölgesini belgeler. Kategorideki tüm lotların bu bölgeye ait olduğu doğrulanmadı. Yol planı tamamlanmış altyapıyı kanıtlamaz.",
   zh: "2024年12月24日PQ-454第84项记载费尔干纳区Yuqori Archa青年工业与创业区。尚未确认该类别全部标的属于此经济区。道路规划不代表基础设施已完成。",
 };
+
+// User-supplied district report. Document creation/reporting date is not stated.
+// These records are independent of the E-auksion snapshot above. Do not infer
+// parcel membership, current auction availability or total-zone boundaries.
+export const districtReport = {
+  source: {
+    kind: "user-supplied-document",
+    url: "/documents/fergana-district-industrial-zones.docx",
+    receivedAt: "2026-10-12",
+    documentDate: null,
+    officialVerification: "pending",
+  },
+  freeEconomicZone: {
+    establishedBy: {
+      reference: "PQ-61",
+      date: "2026-02-13",
+      independentlyVerified: false,
+    },
+    totalAreaHa: 57.82,
+    allocatedAreaHa: 33.3,
+    projectCount: 1,
+    investmentUSD: 100000000,
+    investor: "HENG TAI",
+    investorLegalForm: "JV LLC",
+    projectName: "Fergana Eurasia International Trade Center",
+    projectStatus: "construction",
+    reportedAuctionAreaHa: 20.4,
+  },
+  existingIndustrialZones: {
+    zoneCount: 5,
+    namesProvided: false,
+    totalAreaHa: 37,
+    communicationAreaHa: 5.5,
+    usableAreaHa: 31.5,
+    allocatedAreaHa: 19,
+    projectCount: 53,
+    investmentUZS: 927900000000,
+    plannedJobs: 850,
+    active: {
+      projectCount: 24,
+      investmentUZS: 27900000000,
+      areaHa: 4.3,
+      createdJobs: 355,
+      outputUZS: 4200000000,
+    },
+    ongoing: {
+      projectCount: 29,
+      investmentUZS: 899200000000,
+      areaHa: 14.7,
+      plannedJobs: 400,
+    },
+    launchedJanuaryAugust2026: {
+      projectCount: 1,
+      investmentUZS: 3000000000,
+      createdJobs: 12,
+    },
+    reportedAuctionAreaHa: 12.5,
+  },
+  newIndustrialZones: {
+    reportedTotalAreaHa: 29.3,
+    plannedJobs: 1606,
+    reportedAuctionAreaHa: 20.4,
+  },
+  discrepancies: [
+    {
+      key: "existing-investment",
+      reported: 927900000000,
+      components: 927100000000,
+      unit: "UZS",
+      note: "927.9 billion differs from 27.9 + 899.2 = 927.1 billion.",
+    },
+    {
+      key: "existing-jobs",
+      reported: 850,
+      components: 755,
+      unit: "jobs",
+      note: "850 planned jobs differs from 355 created + 400 planned = 755; categories may differ and are not reconciled.",
+    },
+    {
+      key: "new-auction-area",
+      reported: 20.4,
+      arithmeticRemainder: 15.05,
+      unit: "ha",
+      note: "29.3 - (4.5 + 7.3 + 2.45) = 15.05 ha, not the reported 20.4 ha. Source values remain unchanged.",
+    },
+  ],
+};
+
+const suppliedSource = districtReport.source;
+export const officialZones = [
+  {
+    id: "kokand-fergana-district-branch",
+    kind: "free-economic-zone-branch",
+    names: {
+      uz: "Qo‘qon EIZ — Farg‘ona tumani filiali",
+      ru: "СЭЗ «Коканд» — филиал в Ферганском районе",
+      en: "Kokand FEZ — Fergana District Branch",
+      tr: "Kokand SEB — Fergana İlçesi Şubesi",
+      zh: "浩罕自由经济区 — 费尔干纳区分支",
+    },
+    source: suppliedSource,
+    areaHa: 57.82,
+    areaMeaning: "total-zone-area-reported",
+    allocatedProjectAreaHa: 33.3,
+    projects: [
+      {
+        investmentUSD: 100000000,
+        investor: "HENG TAI",
+        investorLegalForm: "JV LLC",
+        name: "Fergana Eurasia International Trade Center",
+        status: "construction",
+        allocatedAreaHa: 33.3,
+      },
+    ],
+    reportedAuctionAreaHa: 20.4,
+    establishedBy: districtReport.freeEconomicZone.establishedBy,
+    matchedAuctionLotIds: [],
+  },
+  {
+    id: "gulpiyon",
+    kind: "new-industrial-zone",
+    names: {
+      uz: "Gulpiyon",
+      ru: "Гулпийон",
+      en: "Gulpiyon",
+      tr: "Gulpiyon",
+      zh: "Gulpiyon",
+    },
+    source: suppliedSource,
+    areaHa: null,
+    areaMeaning: "total-zone-area-not-provided",
+    allocatedProjectAreaHa: 4.5,
+    projects: [{ investmentUSD: 20000000, allocatedAreaHa: 4.5 }],
+    reportedAuctionAreaHa: null,
+    matchedAuctionLotIds: [],
+  },
+  {
+    id: "yangi-asr",
+    kind: "new-industrial-zone",
+    names: {
+      uz: "Yangi Asr",
+      ru: "Янги Аср",
+      en: "Yangi Asr",
+      tr: "Yangi Asr",
+      zh: "Yangi Asr",
+    },
+    source: suppliedSource,
+    areaHa: null,
+    areaMeaning: "total-zone-area-not-provided",
+    allocatedProjectAreaHa: 7.3,
+    projects: [{ investmentUSD: 2300000, allocatedAreaHa: 7.3 }],
+    reportedAuctionAreaHa: null,
+    matchedAuctionLotIds: [],
+  },
+  {
+    id: "markaz",
+    kind: "new-industrial-zone",
+    names: {
+      uz: "Markaz",
+      ru: "Марказ",
+      en: "Markaz",
+      tr: "Markaz",
+      zh: "Markaz",
+    },
+    source: suppliedSource,
+    areaHa: null,
+    areaMeaning: "total-zone-area-not-provided",
+    allocatedProjectAreaHa: 2.45,
+    projects: [{ investmentUSD: 5000000, allocatedAreaHa: 2.45 }],
+    reportedAuctionAreaHa: null,
+    matchedAuctionLotIds: [],
+  },
+];
+
+// Preserve the project proper name in each portal language.
+officialZones[0].projects[0].nameLocalized = {
+  uz: "Farg‘ona Yevroosiyo xalqaro savdo markazi",
+  ru: "Ферганский Евразийский международный торговый центр",
+  en: "Fergana Eurasia International Trade Center",
+  tr: "Fergana Avrasya Uluslararası Ticaret Merkezi",
+  zh: "费尔干纳欧亚国际贸易中心",
+};
