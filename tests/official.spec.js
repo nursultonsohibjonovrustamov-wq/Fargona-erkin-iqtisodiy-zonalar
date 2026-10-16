@@ -38,7 +38,7 @@ for (const { code } of languages)
     page.on("pageerror", (e) => errors.push(e.message));
     for (const width of [1440, 390]) {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto(`/${code}/zones`);
+      await page.goto(`/${code}/archive/document-20261012`);
       await expect(page.getByTestId("official-zone-card")).toHaveCount(4);
       await expect(page.getByTestId("property-card")).toHaveCount(0);
       for (const zone of officialZones) {
@@ -73,7 +73,7 @@ test("source document download and catalogue links work", async ({
   expect(r.status()).toBe(200);
   const bytes = await r.body();
   expect(bytes.subarray(0, 2).toString()).toBe("PK");
-  await page.goto("/uz/");
+  await page.goto("/uz/archive/document-20261012");
   const d = page.waitForEvent("download");
   await page
     .locator('a[href="/documents/fergana-district-industrial-zones.docx"]')

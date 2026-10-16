@@ -2,15 +2,17 @@
 
 Faqat **Farg‘ona tumani** uchun besh tilli investitsiya portali. Tashkilot: **Farg‘ona tumani hokimligi**. Farg‘ona shahri, Qo‘qon, Quvasoy yoki boshqa tumanlar ushbu katalogga kirmaydi.
 
-## Buyurtmachi hujjati asosidagi kontent — 2026-10-12
+## Asosiy portfolio — 2026-10-16
 
-Bosh sahifa va `/zones` endi taqdim etilgan DOCX ma’lumotiga asoslangan. Alohida sahifalar: Qo‘qon EIZning Farg‘ona tumani filiali, Gulpiyon, Yangi Asr va Markaz. Uchta yangi zona uchun loyiha maydoni umumiy zona maydoni deb ko‘rsatilmaydi. Mavjud5zona hujjatda nomsiz, umumiy ko‘rsatkichlar sifatida berilgan.
+Foydalanuvchi tanlovi bilan bosh sahifa va `/zones` yangi to‘rtta hududga almashtirildi: Oqbilol 351 ha, Vodil–Qizilqo‘rg‘on 24.4 ha, Guzar 11.4 ha, Yangi Asr 8.7 ha. Jami 395.5 ha. Har bir hududning original xaritasi, maydon tarkibi, joylashuvi va alohida sahifasi bor. Narx, ijara muddati va joriy yer mavjudligi tasdiqlanmagan.
 
-Manba `/documents/fergana-district-industrial-zones.docx` orqali yuklanadi. Qabul qilingan sana2026-10-12, hujjat sanasi va tashqi rasmiy tasdiq tekshirilmagan. Arifmetik nomuvofiqliklar: `docs/ACTUAL-DATA-REVIEW.md`. Ular qat’iy KPI sifatida chiqarilmagan.
+Manba `/documents/fergana-investor-presentation-2026.pptx`, 9 slayd. Ikkinchi katta PPTX 32 MiB transfer cheklovi sabab o‘qilmadi. Tarif va soliq imtiyozlari taqdimotdagi da’volar sifatida, mustaqil huquqiy tekshiruv zarurati bilan berilgan. Oqbilol xaritasidagi tashqi 1200 ha kontur va taklif qilingan 351 ha qism farqlanadi. Audit: `docs/PRESENTATION-REVIEW-2026-10-16.md`.
 
-Oldingi66tuman auksion loti `/auctions`da alohida snapshot bo‘lib qoladi. Bu lotlar yangi nomlangan zonalarga mos deb avtomatik biriktirilmagan. Narx ijara haqi emas. Baza va backend hali yo‘q; murojaat kartasi localStorage/faylga saqlanadi, tashkilotga yuborilmaydi.
+Ma’lumot va sahifalar: `src/presentation-data.js`, `src/presentation-zones.jsx`, `src/presentation-zones.css`. Tuman xaritasi `/region`da. Eski DOCX agregatlari `/archive/document-20261012`da, eski zona havolalari arxiv izohi bilan saqlanadi. Yangi Asr 8.7 ha eski 7.3 ha loyiha maydoni bilan birlashtirilmagan.
 
-Kontent manbasi: `src/catalog-data.js`; sahifalar: `src/official-zones.jsx`; tekshiruvlar: `tests/official.spec.js`. Tayyorlash: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`.
+66 auksion loti `/auctions`da alohida 2026-10-11 nusxasi bo‘lib qoladi; yangi hududlarga avtomatik biriktirilmagan. Backend va baza yo‘q; murojaat kartasi brauzerda yoki faylda saqlanadi, tashkilotga yuborilmaydi.
+
+Tayyorlash: `npm run build`, `python3 tools/build-portable.py`, `python3 tools/package-demo.py`. Vercel main branchdan avtomatik nashr qiladi; nashrni jonli JS hash, original xaritalar va PPTX orqali tekshiring.
 
 ## Bitta faylli taqdimot
 

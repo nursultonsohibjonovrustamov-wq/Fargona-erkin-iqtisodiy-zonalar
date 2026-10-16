@@ -1,3 +1,11 @@
+# Yangi asosiy portfolio — 2026-10-16
+
+6 Node va 46 noyob brauzer testi: jami 52 test o‘tdi. Asosiy regressiya32, yangi taqdimot14 (shu jumladan5tilda tuman xaritasi). MustaqilHTML yakuniy to‘rtta hudud, xaritalar va auksionga o‘tish bilan qayta o‘tdi. Build muvaffaqiyatli. Tanlangan sahifalar accessibility tekshiruvlarida0buzilish. Desktop/mobil ko‘rinish vizual tekshirildi.
+
+Asosiy katalog yangi4hudud va395.5ha jami bilan yangilandi. OriginalPPTX va4xarita yuklanishi,0qiymatlar saqlanishi, noma’lum narx/ijara, barcha5til, manbalarni ajratish va eski arxiv sahifalari tekshirildi. Tafsilot: PRESENTATION-QA.md. Soliq/tarif da’volari tasdiqlangan huquqiy shart deb ko‘rsatilmaydi. Ikkinchi kattaPPTX transfer cheklovi sabab o‘qilmadi. Quyida oldingi natijalar tarix sifatida saqlanadi.
+
+---
+
 # Hujjat asosidagi ma’lumotlar — 2026-10-12
 
 6 Node va32brauzer testi o‘tdi: jami38. Yangi8test hujjatdagi loyiha maydonlari umumiy zona maydoniga aylantirilmasligi, lotlarga soxta bog‘lanmasligi,4zona sahifasining5tilda desktop/mobil ko‘rinishi, aslDOCX yuklanishi, alohida66lotkatalogi va accessibilityni tekshiradi. Hujjat source-first; rasmiy tasdiq va hujjat sanasi noma’lum. Aniq narx, ijara va zona fotosuratlari berilmagan joylar ochiq belgilangan. Build va mustaqilHTML tekshiruvi muvaffaqiyatli.

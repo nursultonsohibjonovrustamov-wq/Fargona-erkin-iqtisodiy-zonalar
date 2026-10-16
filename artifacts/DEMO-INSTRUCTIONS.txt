@@ -28,3 +28,5 @@ rasmiy nashrdan oldin tasdiqlanishi kerak.
 TUZATILGAN KATALOG: faqat Farg‘ona tumani. Boshqa tuman va shaharlardagi lotlar olib tashlandi. Ma’lumot manbalari: DISTRICT-SOURCES.md.
 
 2026-10-12: bosh sahifa buyurtmachi taqdim etgan DOCX asosida yangilandi.4nomlangan hudud sahifasi va mavjud5zona agregatlari. Oldingi66auksion loti alohida katalogda; yangi zonalarga mansubligi tasdiqlanmagan. ManbaDOCX InternetdagiVerceldan yuklanadi, mustaqilHTML ichiga joylanmagan. Arifmetik nomuvofiqliklar: ACTUAL-DATA-REVIEW.md. Murojaatlar hali serverga yuborilmaydi.
+
+2026-10-16: yangi asosiy hududlar Oqbilol, Vodil–Qizilqo‘rg‘on, Guzar va Yangi Asr; jami395.5ha. Original4xarita va tuman xaritasi qo‘shilgan. EskiDOCX ma’lumotlari arxivda. Narx/ijara noma’lum. Soliq/tariflar manba da’volari, mustaqil tasdiqlanmagan. Ikkinchi kattaPPTX o‘qilmadi.

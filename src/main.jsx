@@ -52,6 +52,27 @@ import {
   officialZones,
 } from "./catalog-data";
 import { OfficialOverview, OfficialZoneDetail } from "./official-zones";
+import {
+  PresentationOverview,
+  PresentationZoneDetail,
+} from "./presentation-zones";
+import { presentationZones } from "./presentation-data";
+const archiveNotice = {
+  uz: "Bu ma’lumot 2026-10-12 kuni taqdim etilgan oldingi hujjatdan. Yangilangan asosiy hududlar katalogini ochish →",
+  en: "This record comes from the earlier document received on 12 October 2026. Open the updated main territory directory →",
+  ru: "Запись из предыдущего документа, полученного 12 октября 2026 года. Открыть обновлённый основной каталог территорий →",
+  tr: "Bu kayıt 12 Ekim 2026 tarihinde sunulan önceki belgedendir. Güncel ana alan kataloğunu açın →",
+  zh: "本记录来自2026年10月12日收到的较早文件。查看更新后的主要区域目录 →",
+};
+function ArchiveNotice({ lang, Link }) {
+  return (
+    <div className="container" style={{ paddingTop: 24 }}>
+      <Notice>
+        <Link to="/zones">{archiveNotice[lang]}</Link>
+      </Notice>
+    </div>
+  );
+}
 const Ctx = createContext(null);
 const usePortal = () => useContext(Ctx);
 const sources = [
@@ -306,7 +327,7 @@ function SearchModal({ onClose }) {
       .replace(/[‘’'`ʼ]/g, "");
   const entries = [
     ...searchEntries(lang),
-    ...officialZones.map((z) => ({
+    ...presentationZones.map((z) => ({
       route: `/zones/${z.id}`,
       title: z.names[lang],
       description: z.names[lang],
@@ -381,7 +402,18 @@ function MapIllustration() {
       className="map-wrapper"
       style={{ padding: "48px 32px", textAlign: "center" }}
     >
-      <MapPin size={64} strokeWidth={1.2} aria-hidden="true" />
+      <a href="/district-presentation-map.jpg" target="_blank" rel="noreferrer">
+        <img
+          src="/district-presentation-map.jpg"
+          alt={t.mapLabel}
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            marginBottom: 24,
+          }}
+        />
+      </a>
       <h3>{t.scopeValue}</h3>
       <p>{t.authority}</p>
       <p className="map-note">{t.mapNote}</p>
@@ -1314,7 +1346,7 @@ function App() {
     document.documentElement.lang = lang;
     const i = paths.indexOf(route);
     const ai = articleSlugs.indexOf(route.split("/").pop());
-    document.title = `${i >= 0 ? t.nav[i] : ai >= 0 ? t.articles[ai] : (route === "/auctions" ? "E-auksion" : undefined) || officialZones.find((z) => route === `/zones/${z.id}`)?.names[lang] || getCatalogPageTitle(lang, route) || (route === "/privacy" ? t.privacy : t.notFound)} — ${t.brand}`;
+    document.title = `${i >= 0 ? t.nav[i] : ai >= 0 ? t.articles[ai] : (route === "/auctions" ? "E-auksion" : route === "/archive/document-20261012" ? t.nav[4] + " · 2026-10-12" : undefined) || presentationZones.find((z) => route === `/zones/${z.id}`)?.names[lang] || officialZones.find((z) => route === `/zones/${z.id}`)?.names[lang] || getCatalogPageTitle(lang, route) || (route === "/privacy" ? t.privacy : t.notFound)} — ${t.brand}`;
     document
       .querySelector('meta[name="description"]')
       .setAttribute(
@@ -1326,7 +1358,7 @@ function App() {
   let page =
     route === "/" ? (
       <>
-        <OfficialOverview
+        <PresentationOverview
           lang={lang}
           Link={Link}
           ButtonLink={ButtonLink}
@@ -1346,18 +1378,33 @@ function App() {
       <Region />
     ) : route === "/zones" ? (
       <>
-        <OfficialOverview lang={lang} Link={Link} ButtonLink={ButtonLink} />
+        <PresentationOverview lang={lang} Link={Link} ButtonLink={ButtonLink} />
         <BottomCTA />
       </>
     ) : route === "/auctions" ? (
       <Catalog t={t} lang={lang} Link={Link} ButtonLink={ButtonLink} />
-    ) : officialZones.some((z) => route === `/zones/${z.id}`) ? (
-      <OfficialZoneDetail
+    ) : route === "/archive/document-20261012" ? (
+      <>
+        <ArchiveNotice lang={lang} Link={Link} />
+        <OfficialOverview lang={lang} Link={Link} ButtonLink={ButtonLink} />
+      </>
+    ) : presentationZones.some((z) => route === `/zones/${z.id}`) ? (
+      <PresentationZoneDetail
         lang={lang}
         Link={Link}
         ButtonLink={ButtonLink}
         id={route.split("/").pop()}
       />
+    ) : officialZones.some((z) => route === `/zones/${z.id}`) ? (
+      <>
+        <ArchiveNotice lang={lang} Link={Link} />
+        <OfficialZoneDetail
+          lang={lang}
+          Link={Link}
+          ButtonLink={ButtonLink}
+          id={route.split("/").pop()}
+        />
+      </>
     ) : route.startsWith("/zones/") && getCatalogPageTitle(lang, route) ? (
       <CatalogDetail
         t={t}

@@ -1226,28 +1226,28 @@ export const copy = {
 const publicationLabels = {
   uz: [
     "Tuman investitsiya portali",
-    "Zona ma’lumotlari taqdim etilgan hujjatga asoslangan. Murojaat kartasi brauzerda saqlanadi; tashkilotga yuborilmaydi.",
-    "Farg‘ona tumani zonalari taqdim etilgan hujjat asosida kiritilgan. Auksion lotlari alohida manba nusxasi; muayyan zonaga mansubligi tasdiqlanmagan.",
+    "Asosiy hududlar ma’lumoti taqdim etilgan investor taqdimotiga asoslangan. Murojaat kartasi brauzerda saqlanadi; tashkilotga yuborilmaydi.",
+    "Farg‘ona tumanining Oqbilol, Vodil–Qizilqo‘rg‘on, Guzar va Yangi Asr hududlari investor taqdimoti asosida kiritilgan. Auksion lotlari alohida manba nusxasi; muayyan zonaga mansubligi tasdiqlanmagan.",
   ],
   en: [
     "District investment portal",
-    "Zone information is based on the supplied document. Enquiry cards are saved in your browser and are not sent to the administration.",
-    "Fergana District zones are listed from the supplied document. Auction listings are a separate source snapshot; membership in a specific zone has not been confirmed.",
+    "The main territory information is based on the supplied investor presentation. Enquiry cards are saved in your browser and are not sent to the administration.",
+    "The Oqbilol, Vodil–Qizilqo‘rg‘on, Guzar and Yangi Asr territories of Fergana District are listed from the investor presentation. Auction listings are a separate source snapshot; membership in a specific zone has not been confirmed.",
   ],
   ru: [
     "Инвестиционный портал района",
-    "Сведения о зонах основаны на предоставленном документе. Карточка обращения сохраняется в браузере и не отправляется в администрацию.",
-    "Зоны Ферганского района внесены по предоставленному документу. Аукционные лоты — отдельный снимок источника; принадлежность конкретной зоне не подтверждена.",
+    "Основные территории представлены по инвестиционной презентации. Карточка обращения сохраняется в браузере и не отправляется в администрацию.",
+    "Территории Окбилол, Водиль–Кизилкурган, Гузар и Янги Аср внесены по инвестиционной презентации. Аукционные лоты — отдельный снимок источника; принадлежность конкретной зоне не подтверждена.",
   ],
   tr: [
     "İlçe yatırım portalı",
-    "Bölge bilgileri sunulan belgeye dayanır. Başvuru kartları tarayıcıda saklanır; yönetime gönderilmez.",
-    "Fergana ilçesi bölgeleri sunulan belgeden aktarılmıştır. İhale kayıtları ayrı bir kaynak kopyasıdır; belirli bir bölgeye ait oldukları doğrulanmamıştır.",
+    "Ana alan bilgileri sunulan yatırımcı sunumuna dayanır. Başvuru kartları tarayıcıda saklanır; yönetime gönderilmez.",
+    "Fergana ilçesinin Oqbilol, Vodil–Qizilqo‘rg‘on, Guzar ve Yangi Asr alanları yatırımcı sunumundan aktarılmıştır. İhale kayıtları ayrı bir kaynak kopyasıdır; belirli bir bölgeye ait oldukları doğrulanmamıştır.",
   ],
   zh: [
     "区投资门户",
-    "经济区资料依据提供的文件。咨询卡仅保存在浏览器中，不会发送给行政部门。",
-    "费尔干纳区经济区资料来自提供的文件。拍卖信息为单独的来源快照，尚未确认归属具体经济区。",
+    "主要区域资料依据提供的投资者演示文稿。咨询卡仅保存在浏览器中，不会发送给行政部门。",
+    "费尔干纳区Oqbilol、Vodil–Qizilqo‘rg‘on、Guzar和Yangi Asr区域资料来自投资者演示文稿。拍卖信息为单独的来源快照，尚未确认归属具体经济区。",
   ],
 };
 for (const [lang, values] of Object.entries(publicationLabels)) {
