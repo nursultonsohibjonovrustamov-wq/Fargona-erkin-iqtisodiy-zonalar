@@ -27,20 +27,199 @@
   flex-shrink: 0;
 }
 .presentation-intro-home {
-  background: #10294b;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 83% 14%, #31598475 0, transparent 29%),
+    linear-gradient(118deg, #0c2340 0%, #163b68 100%);
   color: #fff;
   border-bottom: 3px solid #b7954e;
-  padding: 60px 0 48px;
+  padding: clamp(48px, 6vw, 78px) 0;
+}
+.presentation-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(370px, 0.85fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  position: relative;
+}
+.presentation-hero-copy {
+  min-width: 0;
 }
 .presentation-intro-home .eyebrow {
   color: #dcc58e;
 }
 .presentation-intro-home h1 {
   color: white;
+  max-width: 760px;
+  font-size: clamp(38px, 3.6vw, 52px);
+  line-height: 1.1;
+  margin: 17px 0;
 }
-.presentation-intro-home .presentation-lead,
-.presentation-intro-home .presentation-status {
+.presentation-intro-home .presentation-lead {
   color: #d6e1ef;
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.presentation-intro-home .presentation-status {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 20px;
+  padding: 9px 12px;
+  border: 1px solid #d6e1ef2e;
+  border-radius: 999px;
+  background: #ffffff0b;
+  color: #d6e1ef;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.presentation-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
+}
+.presentation-hero-actions .button {
+  min-height: 51px;
+  border-radius: 7px;
+  padding-inline: 18px;
+}
+.presentation-hero-guide {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: #f4f6fb;
+  font-size: 13px;
+  font-weight: 600;
+}
+.presentation-hero-guide:hover {
+  color: #e7ce94;
+}
+.presentation-intro-home .presentation-totals {
+  gap: 12px;
+  border: 0;
+  margin-top: 26px;
+  padding-top: 0;
+}
+.presentation-intro-home .presentation-totals > div {
+  min-width: 160px;
+  padding: 12px 16px;
+  border: 1px solid #d6e1ef2b;
+  border-radius: 9px;
+  background: #ffffff0a;
+}
+.presentation-intro-home .presentation-totals strong {
+  font-size: 29px;
+}
+.presentation-intro-home .presentation-totals span {
+  max-width: 180px;
+  color: #d6e1ef;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.presentation-hero-board {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #ffffff7a;
+  border-radius: 14px;
+  background: #f8fbff;
+  box-shadow: 0 24px 60px #07182d52;
+}
+.presentation-hero-board-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 4px 11px;
+  color: #405773;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.presentation-hero-board-head > span:last-child {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #e8eef6;
+  color: #153b69;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.presentation-hero-board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.presentation-hero-tile {
+  position: relative;
+  display: block;
+  min-width: 0;
+  min-height: 148px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #627b97;
+  color: white;
+}
+.presentation-hero-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+.presentation-hero-tile:hover img {
+  transform: scale(1.04);
+}
+.presentation-hero-tile-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #081a3000 12%, #081a30e8 100%);
+}
+.presentation-hero-tile-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+}
+.presentation-hero-tile-content small {
+  margin-bottom: 3px;
+  color: #e7ce94;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.presentation-hero-tile-content strong {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.presentation-hero-tile-content > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  color: #f4f6fb;
+  font-size: 11px;
+  font-weight: 600;
+}
+.presentation-hero-board-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 10px 4px 1px;
+  color: #52647a;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.presentation-hero-board-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 .presentation-totals {
   display: flex;
@@ -340,6 +519,10 @@
 .presentation-map a:focus-visible {
   outline-offset: -4px;
 }
+.presentation-hero-tile:focus-visible {
+  outline: 3px solid #e7ce94;
+  outline-offset: 2px;
+}
 @media (max-width: 1100px) {
   .presentation-detail-grid {
     grid-template-columns: 1fr;
@@ -360,6 +543,17 @@
     gap: 7px;
   }
 }
+@media (max-width: 900px) {
+  .presentation-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .presentation-hero-copy,
+  .presentation-hero-board {
+    width: 100%;
+    max-width: 720px;
+  }
+}
 @media (max-width: 760px) {
   .presentation-intro,
   .presentation-intro-home {
@@ -368,8 +562,68 @@
   .presentation-intro h1 {
     font-size: 31px;
   }
+  .presentation-intro-home h1 {
+    font-size: clamp(32px, 8vw, 42px);
+    margin: 15px 0;
+  }
   .presentation-lead {
     font-size: 15px;
+  }
+  .presentation-hero-layout {
+    gap: 22px;
+  }
+  .presentation-intro-home .presentation-lead {
+    font-size: 15px;
+  }
+  .presentation-intro-home .presentation-status {
+    align-items: flex-start;
+    border-radius: 9px;
+  }
+  .presentation-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  .presentation-hero-actions .button {
+    width: 100%;
+  }
+  .presentation-hero-guide {
+    justify-content: center;
+  }
+  .presentation-intro-home .presentation-totals {
+    gap: 9px;
+    margin-top: 20px;
+  }
+  .presentation-intro-home .presentation-totals > div {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 12px;
+  }
+  .presentation-intro-home .presentation-totals strong {
+    font-size: 25px;
+  }
+  .presentation-intro-home .presentation-totals span {
+    font-size: 10px;
+  }
+  .presentation-hero-board {
+    padding: 9px;
+    border-radius: 11px;
+  }
+  .presentation-hero-tile {
+    min-height: 122px;
+  }
+  .presentation-hero-tile-content {
+    padding: 10px;
+  }
+  .presentation-hero-tile-content strong {
+    font-size: 12px;
+  }
+  .presentation-hero-tile-content > span {
+    font-size: 10px;
+  }
+  .presentation-hero-board-note {
+    font-size: 9px;
   }
   .presentation-totals {
     gap: 30px;

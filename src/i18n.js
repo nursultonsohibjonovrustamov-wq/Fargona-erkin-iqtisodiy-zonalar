@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 17340)
+Total output lines: 1299
+
 export const languages = [
   { code: "uz", label: "O‘zbekcha", short: "UZ", locale: "uz-UZ" },
   { code: "en", label: "English", short: "EN", locale: "en-GB" },
@@ -140,7 +143,7 @@ export const copy = {
     home: "Bosh sahifa",
     regionTitle: "Farg‘ona tumani",
     regionLead:
-      "Farg‘ona tumani loyihasi uchun bozor, infratuzilma va logistika talablari aniq obyekt bo‘yicha baholanadi. Tasdiqlanmagan statistik raqamlar kiritilmaydi.",
+      "Farg‘ona tumani haqida: aholi, iqtisodiyot, turizm maskanlari, davlat xizmatlari va rasmiy aloqa manbalari.",
     regionCards: ["Logistika", "Mahalliy hamkorlik", "Infratuzilma"],
     regionCardTexts: [
       "Yetkazib berish yo‘nalishlari, bojxona va transport xarajatlarini loyiha kesimida hisoblang.",
@@ -390,7 +393,7 @@ export const copy = {
     home: "Home",
     regionTitle: "Fergana District",
     regionLead:
-      "For a project in Fergana District, market, infrastructure and logistics needs are assessed for the individual property. Unconfirmed statistics are not presented.",
+      "Fergana District at a glance: population, economy, visitor sites, public services and official contacts.",
     regionCards: ["Logistics", "Local partnerships", "Infrastructure"],
     regionCardTexts: [
       "Calculate delivery routes, customs requirements and transport costs for your project.",
@@ -622,66 +625,7 @@ export const copy = {
     footerSources: "Официальные источники",
     ministry: "Министерство инвестиций",
     regionGov: "Хокимият области",
-    legislation: "База законодательства",
-    privacy: "Конфиденциальность",
-    demoBadge: "Презентационная версия",
-    demoNote:
-      "Портал подготовлен для презентации. Официальные данные и контакты требуют подтверждения перед публикацией.",
-    copyright: "Хокимият Ферганского района",
-    search: "Поиск",
-    searchPlaceholder: "Найдите зону, руководство или тему…",
-    searchTitle: "Поиск по порталу",
-    noResults: "Ничего не найдено. Попробуйте другой запрос.",
-    results: "Результаты поиска",
-    close: "Закрыть",
-    menu: "Меню",
-    skip: "Перейти к основному содержанию",
-    back: "Назад",
-    home: "Главная",
-    regionTitle: "Ферганский район",
-    regionLead:
-      "Для проекта в Ферганском районе рынок, инфраструктура и логистика оцениваются по конкретному объекту. Неподтверждённые статистические данные не публикуются.",
-    regionCards: ["Логистика", "Местное партнёрство", "Инфраструктура"],
-    regionCardTexts: [
-      "Рассчитайте маршруты поставок, таможенные требования и транспортные расходы проекта.",
-      "Изучите сотрудничество с поставщиками, производителями и специалистами.",
-      "Подтвердите условия подключения электричества, газа, воды и транспорта для конкретной площадки.",
-    ],
-    regionNote:
-      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
-    zonesPageTitle: "Объекты Ферганского района",
-    zoneDetailLead:
-      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
-    overview: "Общие сведения",
-    zoneDetailText:
-      "Официальные сведения об объектах Ферганского района ожидают подтверждения. Площадь, права, инфраструктура и цены проверяются по каждому объекту отдельно.",
-    verifyTitle: "Проверьте перед решением",
-    verification: [
-      "Критерии приёма резидентов",
-      "Правовой статус и наличие земли",
-      "Условия подключения коммуникаций",
-      "Налоговые и таможенные нормы для проекта",
-    ],
-    noInvented:
-      "Свободные участки, тарифы и льготы не указаны без подтверждённых данных.",
-    mapOpen: "Посмотреть расположение на карте",
-    preparation: "Подготовка проекта",
-    checklist: "Скачать список",
-    legalTitle: "Как проверить льготы?",
-    legalText:
-      "Льготы могут зависеть от проекта, статуса резидента и действующего законодательства. Проверьте актуальную редакцию закона «О специальных экономических зонах» и связанных документов в LexUZ; получите письменное разъяснение.",
-    faqTitle: "Частые вопросы",
-    faqs: [
-      "Можно ли стать резидентом через этот сайт?",
-      "Где узнать о свободных участках?",
-      "Все ли инвесторы получают одинаковые льготы?",
-      "Как работает презентационная форма?",
-    ],
-    faqAnswers: [
-      "Нет. Портал предоставляет информацию и инструменты подготовки проекта. Резидентство оформляется по официальной процедуре уполномоченной организации.",
-      "Подтвердите статус и наличие земли в дирекции зоны и соответствующем уполномоченном органе.",
-      "Такой гарантии нет. Условия проверяются по действующему законодательству и особенностям проекта.",
-      "Форма сохраняет сведения в этом браузере и выгружает файл. Организации они не отправляются.",
+…1340 tokens truncated…ии они не отправляются.",
     ],
     sourceStatus: "Источники и статус проверки",
     sourceText:
@@ -889,7 +833,7 @@ export const copy = {
     home: "Ana sayfa",
     regionTitle: "Fergana İlçesi",
     regionLead:
-      "Fergana İlçesi projesinde pazar, altyapı ve lojistik ihtiyaçları taşınmaz bazında değerlendirilir. Doğrulanmamış istatistikler sunulmaz.",
+      "Fergana İlçesi hakkında: nüfus, ekonomi, turistik yerler, kamu hizmetleri ve resmî iletişim bilgileri.",
     regionCards: ["Lojistik", "Yerel ortaklıklar", "Altyapı"],
     regionCardTexts: [
       "Projeniz için teslimat rotalarını, gümrük gereksinimlerini ve taşıma maliyetlerini hesaplayın.",
@@ -1112,7 +1056,7 @@ export const copy = {
     home: "首页",
     regionTitle: "费尔干纳区",
     regionLead:
-      "费尔干纳区项目的市场、基础设施及物流需求须按具体物业评估。不展示未经确认的统计数据。",
+      "费尔干纳区概况：人口、经济、旅游景点、公共服务与官方联系方式。",
     regionCards: ["物流", "本地合作", "基础设施"],
     regionCardTexts: [
       "为项目计算运输路线、海关要求和运输成本。",

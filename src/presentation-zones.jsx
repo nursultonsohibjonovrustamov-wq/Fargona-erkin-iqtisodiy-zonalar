@@ -436,34 +436,98 @@ function Utilities({ lang, c }) {
     </section>
   );
 }
-export function PresentationOverview({ lang, Link, ButtonLink, home = false }) {
+export function PresentationOverview({
+  lang,
+  Link,
+  ButtonLink,
+  guideLabel,
+  home = false,
+}) {
   const c = labels(lang);
   return (
     <>
       <section
         className={`presentation-intro ${home ? "presentation-intro-home" : ""}`}
       >
-        <div className="container">
-          <p className="eyebrow">{c[0]}</p>
-          <h1>{c[1]}</h1>
-          <p className="presentation-lead">{c[2]}</p>
-          <div className="presentation-status">
-            <ShieldCheck size={18} />
-            {c[5]}
-          </div>
-          <div className="presentation-totals">
-            <div>
-              <strong>{ha(presentationReport.totalAreaHa, lang, c)}</strong>
-              <span>{c[3]}</span>
+        <div className={`container ${home ? "presentation-hero-layout" : ""}`}>
+          <div className={home ? "presentation-hero-copy" : undefined}>
+            <p className="eyebrow">{c[0]}</p>
+            <h1>{c[1]}</h1>
+            <p className="presentation-lead">{c[2]}</p>
+            <div className="presentation-status">
+              <ShieldCheck size={18} />
+              {c[5]}
             </div>
-            <div>
-              <strong>{presentationSites.length}</strong>
-              <span>{c[4]}</span>
+            {home && (
+              <div className="presentation-hero-actions">
+                <a className="button button-light" href="#presentation-sites">
+                  {c[6]}
+                  <ArrowUpRight size={17} />
+                </a>
+                {guideLabel && (
+                  <Link className="presentation-hero-guide" to="/investor">
+                    {guideLabel}
+                    <ArrowUpRight size={17} />
+                  </Link>
+                )}
+              </div>
+            )}
+            <div className="presentation-totals">
+              <div>
+                <strong>{ha(presentationReport.totalAreaHa, lang, c)}</strong>
+                <span>{c[3]}</span>
+              </div>
+              <div>
+                <strong>{presentationSites.length}</strong>
+                <span>{c[4]}</span>
+              </div>
             </div>
           </div>
+          {home && (
+            <aside className="presentation-hero-board" aria-label={c[6]}>
+              <div className="presentation-hero-board-head">
+                <span>{c[6]}</span>
+                <span>{presentationSites.length} · {c[4]}</span>
+              </div>
+              <div className="presentation-hero-board-grid">
+                {presentationSites.map((site, index) => {
+                  const name = site.names[lang] || site.names.uz;
+                  return (
+                    <Link
+                      key={site.id}
+                      to={`/zones/${site.id}`}
+                      className="presentation-hero-tile"
+                      aria-label={`${name} · ${ha(site.areaHa, lang, c)} · ${c[8]}`}
+                    >
+                      <img src={site.mapUrl} alt="" loading="lazy" />
+                      <span
+                        className="presentation-hero-tile-shade"
+                        aria-hidden="true"
+                      />
+                      <span className="presentation-hero-tile-content">
+                        <small>0{index + 1}</small>
+                        <strong>{name}</strong>
+                        <span>
+                          {ha(site.areaHa, lang, c)}
+                          <ArrowUpRight size={14} />
+                        </span>
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+              <p className="presentation-hero-board-note">
+                <FileText size={14} />
+                {c[39]}
+              </p>
+            </aside>
+          )}
         </div>
       </section>
-      <section className="container presentation-section">
+      <section
+        id="presentation-sites"
+        className="container presentation-section"
+      >
         <div className="presentation-section-head">
           <h2>{c[6]}</h2>
           <p>{c[11]}</p>

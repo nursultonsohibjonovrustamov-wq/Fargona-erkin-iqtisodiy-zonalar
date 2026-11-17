@@ -57,6 +57,7 @@ import {
   PresentationZoneDetail,
 } from "./presentation-zones";
 import { presentationZones } from "./presentation-data";
+import { DistrictProfile } from "./district-profile";
 const archiveNotice = {
   uz: "Bu ma’lumot 2026-10-12 kuni taqdim etilgan oldingi hujjatdan. Yangilangan asosiy hududlar katalogini ochish →",
   en: "This record comes from the earlier document received on 12 October 2026. Open the updated main territory directory →",
@@ -702,41 +703,11 @@ function PageHero({ eyebrow, title, lead }) {
   );
 }
 function Region() {
-  const { t } = usePortal();
+  const { lang, t } = usePortal();
   return (
     <>
       <PageHero eyebrow={t.nav[1]} title={t.regionTitle} lead={t.regionLead} />
-      <section className="section container region-overview">
-        <div>
-          <p className="eyebrow">{t.aboutEyebrow}</p>
-          <h2>{t.aboutTitle}</h2>
-          <p className="section-lead">{t.aboutText}</p>
-          <ul className="check-list">
-            {t.aboutPoints.map((x) => (
-              <li key={x}>
-                <Check size={17} />
-                {x}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <MapIllustration />
-      </section>
-      <section className="container region-cards">
-        {t.regionCards.map((x, i) => {
-          const Icon = [Route, Building2, Zap][i];
-          return (
-            <article key={x}>
-              <Icon size={32} strokeWidth={1.3} />
-              <h3>{x}</h3>
-              <p>{t.regionCardTexts[i]}</p>
-            </article>
-          );
-        })}
-      </section>
-      <div className="container">
-        <Notice>{t.regionNote}</Notice>
-      </div>
+      <DistrictProfile lang={lang} />
       <section className="section container">
         <SectionHeading
           eyebrow={t.sectorEyebrow}
@@ -1362,6 +1333,7 @@ function App() {
           lang={lang}
           Link={Link}
           ButtonLink={ButtonLink}
+          guideLabel={t.guideCta}
           home
         />
         <section className="section container">
